@@ -43,8 +43,7 @@
     self.navigationItem.titleView = _segmentedControl;
     
     //创建右边按钮
-//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"def_btn_Edit_unpressed"]                                 style:UIBarButtonItemStylePlain target:self action:@selector(editBlogAction)];
-//    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"def_btn_Edit_unpressed"]                                 style:UIBarButtonItemStylePlain target:self action:@selector(editBlogAction)];
 }
 
 - (void)selectTitleType:(UISegmentedControl *)send {
@@ -52,4 +51,8 @@
     
 }
 
+
+- (void)editBlogAction {
+    
+}
 @end
