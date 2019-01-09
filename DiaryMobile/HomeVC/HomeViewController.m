@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "LogListModel.h"
 
 @interface HomeViewController ()
 @property (nonatomic , strong)UISegmentedControl *segmentedControl;     //标签类型
@@ -20,8 +21,11 @@
 }
 
 
+
+
 - (void)loadNewView {
-     [self loadNavSegmentedVCTitle:@[@"最 新",@"推 薦"] views:nil];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    [self loadNavSegmentedVCTitle:@[@"最 新",@"推 薦"] views:nil];
 }
 
 - (void)loadNavSegmentedVCTitle:(NSArray *)titles views:(NSArray *)views {
@@ -45,6 +49,32 @@
     //创建右边按钮
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"def_btn_Edit_unpressed"]                                 style:UIBarButtonItemStylePlain target:self action:@selector(editBlogAction)];
 }
+
+- (void)loadNewData {
+    [self.view showHUDActivityView:@"正在加載..." shade:NO];
+    [BlogTypeList getBlogTypeListBlock:^(NSArray *data, NSString *netErr) {
+        [self.view removeHUDActivity];
+        if (netErr) {
+            [self.view showHUDTitleView:netErr image:nil];
+        } else {
+            [self addItemViewsData:data];
+            
+            //保存分类对象
+            /*NSData *objData = [NSKeyedArchiver archivedDataWithRootObject:data];
+            //创建分类对象的路径
+            NSString *path = [BKTool getLibraryDirectoryPath:BlogTypeKey];
+            //把数据写入文件
+            if ([objData writeToFile:path atomically:YES]) {
+                NSLog(@"Write File Cusseece");
+            }*/
+        }
+    }];
+}
+
+- (void)addItemViewsData:(NSArray *)data {
+    
+}
+
 
 - (void)selectTitleType:(UISegmentedControl *)send {
     

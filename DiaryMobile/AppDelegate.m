@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "KDefine.h"
 @interface AppDelegate ()
 
 @end
@@ -15,8 +15,19 @@
 @implementation AppDelegate
 
 
+/**
+ *  统一设置网络请求服务器地址及配置参数
+ */
+- (void)setupRequestFilters {
+    BKNetworkConfig *config = [BKNetworkConfig sharedInstance];
+    config.baseUrl = kHostURL;
+}
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [self setupRequestFilters];
+    
+    
     return YES;
 }
 
