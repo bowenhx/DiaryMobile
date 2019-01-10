@@ -79,7 +79,6 @@
 		92A31F1921E5CA54002659E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A31F1821E5CA54002659E5 /* main.m */; };
 		92A31F2321E5D8FE002659E5 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A31F2221E5D8FE002659E5 /* BaseViewController.m */; };
 		92A31F2921E5D93F002659E5 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A31F2821E5D93F002659E5 /* TabBarViewController.m */; };
-		92A31F2C21E5D9C0002659E5 /* FriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A31F2B21E5D9C0002659E5 /* FriendViewController.m */; };
 		92A31F2F21E5D9EF002659E5 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A31F2E21E5D9EF002659E5 /* HomeViewController.m */; };
 		92A31F3221E5DA10002659E5 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A31F3121E5DA10002659E5 /* MyViewController.m */; };
 		92A31F3521E5DA57002659E5 /* BaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A31F3421E5DA57002659E5 /* BaseNavigationViewController.m */; };
@@ -133,6 +132,7 @@
 		92FF92E421E6EFF4001EBFF6 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92FF92E121E6EFF3001EBFF6 /* WebViewController.xib */; };
 		92FF92EA21E6F2ED001EBFF6 /* BKCustomPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FF92E621E6F2ED001EBFF6 /* BKCustomPickerView.m */; };
 		92FF92EB21E6F2ED001EBFF6 /* CustomAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FF92E721E6F2ED001EBFF6 /* CustomAlertController.m */; };
+		92FF92F021E7417A001EBFF6 /* FriendsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FF92EF21E7417A001EBFF6 /* FriendsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -287,8 +287,6 @@
 		92A31F2221E5D8FE002659E5 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		92A31F2721E5D93F002659E5 /* TabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		92A31F2821E5D93F002659E5 /* TabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
-		92A31F2A21E5D9C0002659E5 /* FriendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendViewController.h; sourceTree = "<group>"; };
-		92A31F2B21E5D9C0002659E5 /* FriendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendViewController.m; sourceTree = "<group>"; };
 		92A31F2D21E5D9EF002659E5 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		92A31F2E21E5D9EF002659E5 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		92A31F3021E5DA10002659E5 /* MyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
@@ -397,6 +395,8 @@
 		92FF92E721E6F2ED001EBFF6 /* CustomAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAlertController.m; sourceTree = "<group>"; };
 		92FF92E821E6F2ED001EBFF6 /* BKCustomPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKCustomPickerView.h; sourceTree = "<group>"; };
 		92FF92E921E6F2ED001EBFF6 /* CustomAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAlertController.h; sourceTree = "<group>"; };
+		92FF92EE21E7417A001EBFF6 /* FriendsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendsTableViewController.h; sourceTree = "<group>"; };
+		92FF92EF21E7417A001EBFF6 /* FriendsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -740,9 +740,8 @@
 				92A31F0A21E5CA52002659E5 /* AppDelegate.m */,
 				92A31F0C21E5CA52002659E5 /* ViewController.h */,
 				92A31F0D21E5CA52002659E5 /* ViewController.m */,
+				92FF92ED21E74152001EBFF6 /* FriendVC */,
 				9172C63F21E6282A00303BE3 /* HomeVC */,
-				92A31F2A21E5D9C0002659E5 /* FriendViewController.h */,
-				92A31F2B21E5D9C0002659E5 /* FriendViewController.m */,
 				92FF92DF21E6EFF3001EBFF6 /* WebVC */,
 				9172C64D21E62F0A00303BE3 /* MyCenterVC */,
 				92A31F0F21E5CA52002659E5 /* Main.storyboard */,
@@ -1053,6 +1052,15 @@
 			path = CustomAlertController;
 			sourceTree = "<group>";
 		};
+		92FF92ED21E74152001EBFF6 /* FriendVC */ = {
+			isa = PBXGroup;
+			children = (
+				92FF92EE21E7417A001EBFF6 /* FriendsTableViewController.h */,
+				92FF92EF21E7417A001EBFF6 /* FriendsTableViewController.m */,
+			);
+			path = FriendVC;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1156,6 +1164,7 @@
 				92FF92A621E6DD1E001EBFF6 /* ZLPhotoPickerBrowserViewController+SignlePhotoBrowser.m in Sources */,
 				92FF92DE21E6ED2F001EBFF6 /* LogListTableView.m in Sources */,
 				9172C5F221E6276400303BE3 /* MJRefreshComponent.m in Sources */,
+				92FF92F021E7417A001EBFF6 /* FriendsTableViewController.m in Sources */,
 				9172C64B21E62D5100303BE3 /* NSObject+Layout.m in Sources */,
 				9172C5F321E6276400303BE3 /* MJRefreshFooter.m in Sources */,
 				9172C63021E6277600303BE3 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
@@ -1195,7 +1204,6 @@
 				9172C5C021E6275800303BE3 /* UIView+WebCacheOperation.m in Sources */,
 				9172C5BF21E6275800303BE3 /* UIView+WebCache.m in Sources */,
 				9172C5B721E6275700303BE3 /* SDWebImageManager.m in Sources */,
-				92A31F2C21E5D9C0002659E5 /* FriendViewController.m in Sources */,
 				9172C60321E6276400303BE3 /* UIView+MJExtension.m in Sources */,
 				9172C5B221E6275700303BE3 /* SDImageCacheConfig.m in Sources */,
 				9172C60221E6276400303BE3 /* UIScrollView+MJRefresh.m in Sources */,
