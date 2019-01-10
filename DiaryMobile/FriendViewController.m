@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"好友";
+    self.navigationItem.title = @"通訊錄";
 }
 
 

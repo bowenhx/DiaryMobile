@@ -21,7 +21,7 @@
 
 
 /** 给url追加参数，比如AppVersion, ApiVersion,等 */
-@property (strong, nonatomic, readonly) NSDictionary *parameterDic;
+@property (strong, nonatomic) NSDictionary *parameterDic;
 
 
 @end

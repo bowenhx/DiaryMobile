@@ -25,14 +25,18 @@
 }
 
 - (void)loadNewView {
-    
+    //当不是首个控制器时显示返回按钮
+    NSInteger count = self.navigationController.viewControllers.count;
+    if ( count > 1 ) {
+        [self backBtn];
+    }
 }
 
 - (void)loadNewData {
 }
 
 - (void)tapBackBtn {
-    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)tapRightBtn {
@@ -48,7 +52,7 @@
         _backBtn.frame = CGRectMake(0, 0, backImage.size.width, backImage.size.height);
         [_backBtn setImage: backImage forState: UIControlStateNormal];
         [_backBtn setImageEdgeInsets:UIEdgeInsetsMake(0, -5, 0, 5)];
-        [_backBtn addTarget: self action: @selector(tapBackBtn) forControlEvents: UIControlEventTouchUpInside];
+        [_backBtn addTarget: self action: @selector(tapBackBtn) forControlEvents:UIControlEventTouchUpInside];
         UIBarButtonItem *left = [[UIBarButtonItem alloc] initWithCustomView: _backBtn];
         left.style = UIBarButtonItemStylePlain;
         self.navigationItem.leftBarButtonItem = left;

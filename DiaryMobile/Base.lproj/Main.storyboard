@@ -55,22 +55,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yWb-6h-v4P">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOV-cB-zUs" customClass="CustomScrollerHeadView">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                            </scrollView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="wW9-fB-JLf" firstAttribute="trailing" secondItem="yWb-6h-v4P" secondAttribute="trailing" id="4WL-A8-ZKn"/>
-                            <constraint firstItem="yWb-6h-v4P" firstAttribute="leading" secondItem="wW9-fB-JLf" secondAttribute="leading" id="FpD-2E-Nll"/>
-                            <constraint firstItem="yWb-6h-v4P" firstAttribute="top" secondItem="wW9-fB-JLf" secondAttribute="top" id="WBf-E2-f9B"/>
-                            <constraint firstItem="wW9-fB-JLf" firstAttribute="bottom" secondItem="yWb-6h-v4P" secondAttribute="bottom" id="WDa-ty-15y"/>
+                            <constraint firstItem="bOV-cB-zUs" firstAttribute="top" secondItem="wW9-fB-JLf" secondAttribute="top" id="MMA-gT-P9f"/>
+                            <constraint firstItem="bOV-cB-zUs" firstAttribute="leading" secondItem="wW9-fB-JLf" secondAttribute="leading" id="Qhj-NK-or0"/>
+                            <constraint firstItem="wW9-fB-JLf" firstAttribute="trailing" secondItem="bOV-cB-zUs" secondAttribute="trailing" id="ZW8-Za-igK"/>
+                            <constraint firstItem="wW9-fB-JLf" firstAttribute="bottom" secondItem="bOV-cB-zUs" secondAttribute="bottom" id="gaW-fo-OAs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wW9-fB-JLf"/>
                     </view>
                     <navigationItem key="navigationItem" id="MF5-6Q-Ndj"/>
                     <connections>
-                        <outlet property="scrollView" destination="yWb-6h-v4P" id="3VN-wM-T1A"/>
+                        <outlet property="_customScrollerView" destination="bOV-cB-zUs" id="YgT-0B-VG0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qa4-Lf-fLA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -114,6 +115,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="56i-hJ-xlD">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <connections>
                         <segue destination="hMs-8S-xTe" kind="relationship" relationship="rootViewController" id="B7u-xC-c0K"/>
@@ -131,6 +133,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Z0B-ZY-Y1z">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <connections>
                         <segue destination="0js-7P-AST" kind="relationship" relationship="rootViewController" id="YWm-iL-ieg"/>

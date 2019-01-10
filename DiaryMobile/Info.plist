@@ -20,6 +20,19 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCalendarsUsageDescription</key>
+	<string>允許啟用日曆功能，即時獲得最新活動行事曆</string>
+	<key>NSCameraUsageDescription</key>
+	<string>允許啟用相機功能，更新個人頭像及分享相機內容</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>允許你分享相機內容，也可啟用照片和影片功能</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>允許你分享相機內容，也可啟用照片和影片功能</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

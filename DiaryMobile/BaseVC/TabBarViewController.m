@@ -28,7 +28,7 @@
                                 @"tab_button_me_selected"
                                 ];
     
-    NSArray *titles = @[@"首页", @"通讯录", @"我的"];
+    NSArray *titles = @[@"首頁", @"通訊錄", @"我的"];
     for (int i=0; i<_myTabBar.items.count; i++) {
         UITabBarItem *item = self.tabBar.items[i];
         UIImage *image = [[UIImage imageNamed:imgs[i]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];

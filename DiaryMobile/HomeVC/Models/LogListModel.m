@@ -130,21 +130,6 @@
         space ++;
         LogListModel *logList = (LogListModel *)obj;
         [dataList addObject:logList];
-        
-        //插入广告view
-//        if (space && space % EKADADSpace == 0 ) {
-//            if (banners.count > row) {
-//                LogListModel *adModel = [LogListModel new];
-//                adModel.height = banners[row].vBannerHeight;
-//                adModel.bannerView = banners[row];
-//                [dataList addObject:adModel];
-//                row ++;
-//            }
-//        }
-//
-//        if (row == banners.count) {
-//            row = 0;
-//        }
     }];
     
     return dataList;
@@ -162,8 +147,8 @@
     [super setValue:value forKey:key];
     if ([key isEqualToString:@"message"]) {
         self.mesg = value;
-        CGRect rect = [self mLayoutContext:self.mesg bounds:CGSizeMake(kSCREEN_WIDTH - 80 , 55) textFont:14.f];
-        self.height = rect.size.height+5;
+        CGRect rect = [self mLayoutContext:self.mesg bounds:CGSizeMake(kSCREEN_WIDTH - 80 , 65) textFont:17.f];
+        self.height = rect.size.height;
         
     }
 }

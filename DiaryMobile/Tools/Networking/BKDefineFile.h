@@ -61,6 +61,12 @@
 #define WEAKSELF(type)          try{}@finally{} __weak typeof(type) type##Weak = type;
 #define STRONGSELF(type)        __strong typeof(type) type = weak##type;
 
+//self 的弱引用
+#define WeakObj(o) try{}@finally{} __weak typeof(o) o##Weak = o;
+
+//NSString 类型
+#define string(str)  [NSString stringWithFormat:@"%ld",(long)str]
+
 //int 类型转换 NSString 类型
 #define kStringInt(i)       [NSString stringWithFormat:@"%ld", (long)i]
 #define kString_Int(str, i)  [NSString stringWithFormat:@"%@%ld", str, (long)i]

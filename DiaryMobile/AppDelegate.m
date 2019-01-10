@@ -21,6 +21,9 @@
 - (void)setupRequestFilters {
     BKNetworkConfig *config = [BKNetworkConfig sharedInstance];
     config.baseUrl = kHostURL;
+    config.parameterDic = @{@"ver":@"2.4.3",
+                            @"app":@"ios",
+                            @"ipadflag":@0};
 }
 
 
