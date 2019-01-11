@@ -60,7 +60,7 @@ static NSString *BLOG_CELL = @"BlogListCell";
         _tabView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         _tabView.delegate = self;
         _tabView.dataSource = self;
-        _tabView.backgroundColor = [UIColor clearColor];
+        _tabView.backgroundColor = kViewNormalBackColor.color;
         _tabView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tabView.translatesAutoresizingMaskIntoConstraints = NO;
         [self addSubview:_tabView];

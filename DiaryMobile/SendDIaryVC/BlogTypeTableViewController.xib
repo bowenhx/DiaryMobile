@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BlogTypeTableViewController">
+            <connections>
+                <outlet property="tableView" destination="zHA-ZR-Tzs" id="xGG-7y-lDp"/>
+                <outlet property="view" destination="cHL-VS-0Db" id="hep-J6-O0T"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="cHL-VS-0Db">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zHA-ZR-Tzs">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="qYh-ma-oQl"/>
+                        <outlet property="delegate" destination="-1" id="t99-P7-HIc"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="zHA-ZR-Tzs" secondAttribute="trailing" id="46h-Wa-WIS"/>
+                <constraint firstAttribute="bottom" secondItem="zHA-ZR-Tzs" secondAttribute="bottom" id="49P-lJ-zac"/>
+                <constraint firstItem="zHA-ZR-Tzs" firstAttribute="top" secondItem="cHL-VS-0Db" secondAttribute="top" id="7Xb-KG-DY6"/>
+                <constraint firstItem="zHA-ZR-Tzs" firstAttribute="leading" secondItem="cHL-VS-0Db" secondAttribute="leading" id="FEC-XQ-BPK"/>
+            </constraints>
+            <point key="canvasLocation" x="108" y="-342"/>
+        </view>
+    </objects>
+</document>

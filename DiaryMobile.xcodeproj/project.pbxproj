@@ -71,6 +71,14 @@
 		9172C65621E62F1A00303BE3 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 9172C65221E62F1A00303BE3 /* User.m */; };
 		9172C65721E62F1A00303BE3 /* UserGroups.m in Sources */ = {isa = PBXBuildFile; fileRef = 9172C65421E62F1A00303BE3 /* UserGroups.m */; };
 		9172C65B21E62F7A00303BE3 /* BKTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9172C65A21E62F7A00303BE3 /* BKTool.m */; };
+		929A187E21E88B82007FE304 /* EditDiaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A187B21E88B82007FE304 /* EditDiaryViewController.m */; };
+		929A187F21E88B82007FE304 /* EditDiaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 929A187C21E88B82007FE304 /* EditDiaryViewController.xib */; };
+		929A188321E88B8A007FE304 /* BlogTypeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 929A188121E88B89007FE304 /* BlogTypeTableViewController.xib */; };
+		929A188421E88B8A007FE304 /* BlogTypeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A188221E88B8A007FE304 /* BlogTypeTableViewController.m */; };
+		929A188821E88EEE007FE304 /* UIImage+UIImageExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A188721E88EEE007FE304 /* UIImage+UIImageExt.m */; };
+		929A188B21E88F6D007FE304 /* FriendListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A188A21E88F6C007FE304 /* FriendListViewController.m */; };
+		929A189021E89843007FE304 /* BlogSettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 929A188D21E89843007FE304 /* BlogSettingTableViewCell.xib */; };
+		929A189121E89843007FE304 /* BlogSettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A188E21E89843007FE304 /* BlogSettingTableViewCell.m */; };
 		92A31F0B21E5CA52002659E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A31F0A21E5CA52002659E5 /* AppDelegate.m */; };
 		92A31F0E21E5CA52002659E5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A31F0D21E5CA52002659E5 /* ViewController.m */; };
 		92A31F1121E5CA52002659E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92A31F0F21E5CA52002659E5 /* Main.storyboard */; };
@@ -273,6 +281,19 @@
 		9172C65421E62F1A00303BE3 /* UserGroups.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserGroups.m; sourceTree = "<group>"; };
 		9172C65921E62F7A00303BE3 /* BKTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKTool.h; sourceTree = "<group>"; };
 		9172C65A21E62F7A00303BE3 /* BKTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKTool.m; sourceTree = "<group>"; };
+		929A187B21E88B82007FE304 /* EditDiaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditDiaryViewController.m; sourceTree = "<group>"; };
+		929A187C21E88B82007FE304 /* EditDiaryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditDiaryViewController.xib; sourceTree = "<group>"; };
+		929A187D21E88B82007FE304 /* EditDiaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditDiaryViewController.h; sourceTree = "<group>"; };
+		929A188021E88B89007FE304 /* BlogTypeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogTypeTableViewController.h; sourceTree = "<group>"; };
+		929A188121E88B89007FE304 /* BlogTypeTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlogTypeTableViewController.xib; sourceTree = "<group>"; };
+		929A188221E88B8A007FE304 /* BlogTypeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogTypeTableViewController.m; sourceTree = "<group>"; };
+		929A188621E88EEE007FE304 /* UIImage+UIImageExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+UIImageExt.h"; sourceTree = "<group>"; };
+		929A188721E88EEE007FE304 /* UIImage+UIImageExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+UIImageExt.m"; sourceTree = "<group>"; };
+		929A188921E88F6C007FE304 /* FriendListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendListViewController.h; sourceTree = "<group>"; };
+		929A188A21E88F6C007FE304 /* FriendListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendListViewController.m; sourceTree = "<group>"; };
+		929A188D21E89843007FE304 /* BlogSettingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlogSettingTableViewCell.xib; sourceTree = "<group>"; };
+		929A188E21E89843007FE304 /* BlogSettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogSettingTableViewCell.m; sourceTree = "<group>"; };
+		929A188F21E89843007FE304 /* BlogSettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogSettingTableViewCell.h; sourceTree = "<group>"; };
 		92A31F0621E5CA52002659E5 /* DiaryMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiaryMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A31F0921E5CA52002659E5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		92A31F0A21E5CA52002659E5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -714,6 +735,41 @@
 			path = Tool;
 			sourceTree = "<group>";
 		};
+		929A187A21E88B77007FE304 /* SendDIaryVC */ = {
+			isa = PBXGroup;
+			children = (
+				929A188921E88F6C007FE304 /* FriendListViewController.h */,
+				929A188A21E88F6C007FE304 /* FriendListViewController.m */,
+				929A187D21E88B82007FE304 /* EditDiaryViewController.h */,
+				929A187B21E88B82007FE304 /* EditDiaryViewController.m */,
+				929A187C21E88B82007FE304 /* EditDiaryViewController.xib */,
+				929A188021E88B89007FE304 /* BlogTypeTableViewController.h */,
+				929A188221E88B8A007FE304 /* BlogTypeTableViewController.m */,
+				929A188121E88B89007FE304 /* BlogTypeTableViewController.xib */,
+				929A188C21E89804007FE304 /* VIews */,
+			);
+			path = SendDIaryVC;
+			sourceTree = "<group>";
+		};
+		929A188521E88EEE007FE304 /* UIImage+EXT */ = {
+			isa = PBXGroup;
+			children = (
+				929A188621E88EEE007FE304 /* UIImage+UIImageExt.h */,
+				929A188721E88EEE007FE304 /* UIImage+UIImageExt.m */,
+			);
+			path = "UIImage+EXT";
+			sourceTree = "<group>";
+		};
+		929A188C21E89804007FE304 /* VIews */ = {
+			isa = PBXGroup;
+			children = (
+				929A188F21E89843007FE304 /* BlogSettingTableViewCell.h */,
+				929A188E21E89843007FE304 /* BlogSettingTableViewCell.m */,
+				929A188D21E89843007FE304 /* BlogSettingTableViewCell.xib */,
+			);
+			path = VIews;
+			sourceTree = "<group>";
+		};
 		92A31EFD21E5CA52002659E5 = {
 			isa = PBXGroup;
 			children = (
@@ -740,6 +796,7 @@
 				92A31F0A21E5CA52002659E5 /* AppDelegate.m */,
 				92A31F0C21E5CA52002659E5 /* ViewController.h */,
 				92A31F0D21E5CA52002659E5 /* ViewController.m */,
+				929A187A21E88B77007FE304 /* SendDIaryVC */,
 				92FF92ED21E74152001EBFF6 /* FriendVC */,
 				9172C63F21E6282A00303BE3 /* HomeVC */,
 				92FF92DF21E6EFF3001EBFF6 /* WebVC */,
@@ -1000,6 +1057,7 @@
 		92FF92C621E6E877001EBFF6 /* UIImageView */ = {
 			isa = PBXGroup;
 			children = (
+				929A188521E88EEE007FE304 /* UIImage+EXT */,
 				92FF92C721E6E877001EBFF6 /* UIImageView+PlayGIF.h */,
 				92FF92C821E6E877001EBFF6 /* UIImageView+PlayGIF.m */,
 			);
@@ -1121,10 +1179,13 @@
 			files = (
 				92FF92BB21E6DD1E001EBFF6 /* ZLPhotoLib.bundle in Resources */,
 				92A31F1621E5CA54002659E5 /* LaunchScreen.storyboard in Resources */,
+				929A187F21E88B82007FE304 /* EditDiaryViewController.xib in Resources */,
 				92A31F1321E5CA54002659E5 /* Assets.xcassets in Resources */,
 				92FF92E421E6EFF4001EBFF6 /* WebViewController.xib in Resources */,
+				929A188321E88B8A007FE304 /* BlogTypeTableViewController.xib in Resources */,
 				9172C60B21E6276D00303BE3 /* MBProgressHUD.bundle in Resources */,
 				9172C5FE21E6276400303BE3 /* MJRefresh.bundle in Resources */,
+				929A189021E89843007FE304 /* BlogSettingTableViewCell.xib in Resources */,
 				92A31F1121E5CA52002659E5 /* Main.storyboard in Resources */,
 				92FF92DD21E6ED2F001EBFF6 /* BlogListCell.xib in Resources */,
 			);
@@ -1137,6 +1198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				929A188821E88EEE007FE304 /* UIImage+UIImageExt.m in Sources */,
 				92A31F2921E5D93F002659E5 /* TabBarViewController.m in Sources */,
 				9172C5F521E6276400303BE3 /* MJRefreshAutoGifFooter.m in Sources */,
 				92FF929E21E6DD1E001EBFF6 /* DACircularProgressView.m in Sources */,
@@ -1172,7 +1234,9 @@
 				92FF92AE21E6DD1E001EBFF6 /* ZLPhotoPickerDatas.m in Sources */,
 				9172C58421E6275000303BE3 /* NSObject+YYModel.m in Sources */,
 				9172C5B421E6275700303BE3 /* SDWebImageDecoder.m in Sources */,
+				929A189121E89843007FE304 /* BlogSettingTableViewCell.m in Sources */,
 				9172C5F821E6276400303BE3 /* MJRefreshBackGifFooter.m in Sources */,
+				929A187E21E88B82007FE304 /* EditDiaryViewController.m in Sources */,
 				9172C60A21E6276D00303BE3 /* MBProgressHUD+Add.m in Sources */,
 				92FF92B021E6DD1E001EBFF6 /* ZLPhotoAssets.m in Sources */,
 				9172C63D21E6278300303BE3 /* HTHorizontalSelectionListLabelCell.m in Sources */,
@@ -1203,6 +1267,7 @@
 				9172C5FC21E6276400303BE3 /* MJRefreshNormalHeader.m in Sources */,
 				9172C5C021E6275800303BE3 /* UIView+WebCacheOperation.m in Sources */,
 				9172C5BF21E6275800303BE3 /* UIView+WebCache.m in Sources */,
+				929A188B21E88F6D007FE304 /* FriendListViewController.m in Sources */,
 				9172C5B721E6275700303BE3 /* SDWebImageManager.m in Sources */,
 				9172C60321E6276400303BE3 /* UIView+MJExtension.m in Sources */,
 				9172C5B221E6275700303BE3 /* SDImageCacheConfig.m in Sources */,
@@ -1245,6 +1310,7 @@
 				92A31F0B21E5CA52002659E5 /* AppDelegate.m in Sources */,
 				9172C5F721E6276400303BE3 /* MJRefreshAutoStateFooter.m in Sources */,
 				9172C62F21E6277600303BE3 /* NSArray+MASAdditions.m in Sources */,
+				929A188421E88B8A007FE304 /* BlogTypeTableViewController.m in Sources */,
 				9172C58521E6275000303BE3 /* YYClassInfo.m in Sources */,
 				92FF92B921E6DD1E001EBFF6 /* ZLPhotoPickerImageView.m in Sources */,
 				9172C64321E6284500303BE3 /* LogListModel.m in Sources */,

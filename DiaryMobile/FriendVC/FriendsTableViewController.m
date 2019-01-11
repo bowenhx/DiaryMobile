@@ -32,7 +32,7 @@ static NSString *kBLOG_CELL = @"BlogListCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"好友日記";
+    self.navigationItem.title = _navTitle ? _navTitle : @"好友日記";
     
     [self loadNewView];
 }
@@ -40,6 +40,7 @@ static NSString *kBLOG_CELL = @"BlogListCell";
 - (void)loadNewView {
     _dataSource = [NSMutableArray array];
     _tempData = [NSMutableArray array];
+    self.tableView.backgroundColor = kViewNormalBackColor.color;
     //注册xib
     [self.tableView registerNib:[UINib nibWithNibName:kBLOG_CELL bundle:nil] forCellReuseIdentifier:kBLOG_CELL];
     //添加下拉刷新功能
@@ -75,7 +76,12 @@ static NSString *kBLOG_CELL = @"BlogListCell";
 }
 
 - (void)refreshMyTableView {
-    [self refreshMyFriendBlogData];
+    if (_navTitle) {
+        [self refreshMyBlogData];
+    } else {
+        [self refreshMyFriendBlogData];
+    }
+    
 }
 
 //好友日志
@@ -90,18 +96,35 @@ static NSString *kBLOG_CELL = @"BlogListCell";
         } else {
             [self.tempData setArray:data];
             [self uniteLoadData];
-            
-//            //表滚动逻辑
-//            if (_isPullRefresh && _vPage != 1) {
-//                [self mTableScrollToBottom];
-//            } else {
-//                [self mTableScrollToTop];
-//            }
         }
         
         if ([netErr hasPrefix:@"沒有更多"] || page.max_page == _vPage) {
             [self.tableView.mj_footer endRefreshingWithNoMoreData];
         }
+    }];
+}
+
+
+- (void)refreshMyBlogData {
+    [self.view showHUDActivityView:@"正在加載..." shade:NO];
+    [LogListModel loadMyBlogListData:_vPage block:^(NSArray *data, LogListPage *page, NSString *netErr) {
+        [self.view removeHUDActivity];
+        [self.tableView endRefreshing];
+        if (netErr) {
+            [self.view showHUDTitleView:netErr image:nil];
+        } else {
+            if (!data.count) {
+                [self.view showHUDTitleView:@"沒有更多數據" image:nil];
+            }
+            [self.tempData setArray:data];
+            [self uniteLoadData];
+            
+        }
+        
+        if ([netErr hasPrefix:@"沒有更多"] || page.max_page == _vPage) {
+            [self.tableView.mj_footer endRefreshingWithNoMoreData];
+        }
+        
     }];
 }
 
@@ -125,9 +148,8 @@ static NSString *kBLOG_CELL = @"BlogListCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BlogListCell *cell = [tableView dequeueReusableCellWithIdentifier:kBLOG_CELL forIndexPath:indexPath];
-   
     LogListModel *model = _dataSource[indexPath.row];
-    [cell mRefreshBlogCell:model type:EKBlogCellTypeWithNormalBlog];
+    [cell mRefreshBlogCell:model type:_navTitle ? EKBlogCellTypeWithMyBlog : EKBlogCellTypeWithNormalBlog];
     return cell;
 }
 
