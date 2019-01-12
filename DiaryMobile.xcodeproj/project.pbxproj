@@ -71,6 +71,11 @@
 		9172C65621E62F1A00303BE3 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 9172C65221E62F1A00303BE3 /* User.m */; };
 		9172C65721E62F1A00303BE3 /* UserGroups.m in Sources */ = {isa = PBXBuildFile; fileRef = 9172C65421E62F1A00303BE3 /* UserGroups.m */; };
 		9172C65B21E62F7A00303BE3 /* BKTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9172C65A21E62F7A00303BE3 /* BKTool.m */; };
+		917CBDA521EA120F00CB0A6D /* UIViewController+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 917CBDA421EA120F00CB0A6D /* UIViewController+Utilities.m */; };
+		91CC72BE21E9EA8A00EC8393 /* FriendListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91CC72BB21E9EA8900EC8393 /* FriendListCell.m */; };
+		91CC72BF21E9EA8A00EC8393 /* FriendListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91CC72BD21E9EA8A00EC8393 /* FriendListCell.xib */; };
+		91CC72C321E9EB9C00EC8393 /* FriendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91CC72C221E9EB9C00EC8393 /* FriendModel.m */; };
+		91CC72C721E9F02F00EC8393 /* UserHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 91CC72C621E9F02F00EC8393 /* UserHelper.m */; };
 		929A187E21E88B82007FE304 /* EditDiaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A187B21E88B82007FE304 /* EditDiaryViewController.m */; };
 		929A187F21E88B82007FE304 /* EditDiaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 929A187C21E88B82007FE304 /* EditDiaryViewController.xib */; };
 		929A188321E88B8A007FE304 /* BlogTypeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 929A188121E88B89007FE304 /* BlogTypeTableViewController.xib */; };
@@ -282,6 +287,15 @@
 		9172C65421E62F1A00303BE3 /* UserGroups.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserGroups.m; sourceTree = "<group>"; };
 		9172C65921E62F7A00303BE3 /* BKTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKTool.h; sourceTree = "<group>"; };
 		9172C65A21E62F7A00303BE3 /* BKTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKTool.m; sourceTree = "<group>"; };
+		917CBDA321EA11CC00CB0A6D /* UIViewController+Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Utilities.h"; sourceTree = "<group>"; };
+		917CBDA421EA120F00CB0A6D /* UIViewController+Utilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Utilities.m"; sourceTree = "<group>"; };
+		91CC72BB21E9EA8900EC8393 /* FriendListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendListCell.m; sourceTree = "<group>"; };
+		91CC72BC21E9EA8A00EC8393 /* FriendListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendListCell.h; sourceTree = "<group>"; };
+		91CC72BD21E9EA8A00EC8393 /* FriendListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendListCell.xib; sourceTree = "<group>"; };
+		91CC72C121E9EB9B00EC8393 /* FriendModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendModel.h; sourceTree = "<group>"; };
+		91CC72C221E9EB9C00EC8393 /* FriendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendModel.m; sourceTree = "<group>"; };
+		91CC72C521E9F02F00EC8393 /* UserHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserHelper.h; sourceTree = "<group>"; };
+		91CC72C621E9F02F00EC8393 /* UserHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserHelper.m; sourceTree = "<group>"; };
 		929A187B21E88B82007FE304 /* EditDiaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditDiaryViewController.m; sourceTree = "<group>"; };
 		929A187C21E88B82007FE304 /* EditDiaryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditDiaryViewController.xib; sourceTree = "<group>"; };
 		929A187D21E88B82007FE304 /* EditDiaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditDiaryViewController.h; sourceTree = "<group>"; };
@@ -437,6 +451,7 @@
 		9172C57D21E6272C00303BE3 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				917CBDA121EA118100CB0A6D /* ControllerEx */,
 				92FF92E521E6F2ED001EBFF6 /* CustomAlertController */,
 				92FF92CA21E6EA6E001EBFF6 /* SaveData */,
 				92FF92C621E6E877001EBFF6 /* UIImageView */,
@@ -719,6 +734,7 @@
 		9172C64E21E62F1A00303BE3 /* SaveUser */ = {
 			isa = PBXGroup;
 			children = (
+				91CC72C421E9F02F00EC8393 /* UserHelper */,
 				9172C64F21E62F1A00303BE3 /* SaveUser.h */,
 				9172C65021E62F1A00303BE3 /* SaveUser.m */,
 				9172C65121E62F1A00303BE3 /* User.h */,
@@ -738,6 +754,33 @@
 			path = Tool;
 			sourceTree = "<group>";
 		};
+		917CBDA121EA118100CB0A6D /* ControllerEx */ = {
+			isa = PBXGroup;
+			children = (
+				917CBDA321EA11CC00CB0A6D /* UIViewController+Utilities.h */,
+				917CBDA421EA120F00CB0A6D /* UIViewController+Utilities.m */,
+			);
+			path = ControllerEx;
+			sourceTree = "<group>";
+		};
+		91CC72C021E9EB8100EC8393 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				91CC72C121E9EB9B00EC8393 /* FriendModel.h */,
+				91CC72C221E9EB9C00EC8393 /* FriendModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		91CC72C421E9F02F00EC8393 /* UserHelper */ = {
+			isa = PBXGroup;
+			children = (
+				91CC72C521E9F02F00EC8393 /* UserHelper.h */,
+				91CC72C621E9F02F00EC8393 /* UserHelper.m */,
+			);
+			path = UserHelper;
+			sourceTree = "<group>";
+		};
 		929A187A21E88B77007FE304 /* SendDIaryVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -749,6 +792,9 @@
 				929A188021E88B89007FE304 /* BlogTypeTableViewController.h */,
 				929A188221E88B8A007FE304 /* BlogTypeTableViewController.m */,
 				929A188121E88B89007FE304 /* BlogTypeTableViewController.xib */,
+				929A189221E8994D007FE304 /* FriendListVC.h */,
+				929A189321E8994D007FE304 /* FriendListVC.m */,
+				91CC72C021E9EB8100EC8393 /* Models */,
 				929A188C21E89804007FE304 /* VIews */,
 			);
 			path = SendDIaryVC;
@@ -766,8 +812,9 @@
 		929A188C21E89804007FE304 /* VIews */ = {
 			isa = PBXGroup;
 			children = (
-				929A189221E8994D007FE304 /* FriendListVC.h */,
-				929A189321E8994D007FE304 /* FriendListVC.m */,
+				91CC72BC21E9EA8A00EC8393 /* FriendListCell.h */,
+				91CC72BB21E9EA8900EC8393 /* FriendListCell.m */,
+				91CC72BD21E9EA8A00EC8393 /* FriendListCell.xib */,
 				929A188F21E89843007FE304 /* BlogSettingTableViewCell.h */,
 				929A188E21E89843007FE304 /* BlogSettingTableViewCell.m */,
 				929A188D21E89843007FE304 /* BlogSettingTableViewCell.xib */,
@@ -1107,10 +1154,10 @@
 		92FF92E521E6F2ED001EBFF6 /* CustomAlertController */ = {
 			isa = PBXGroup;
 			children = (
-				92FF92E621E6F2ED001EBFF6 /* BKCustomPickerView.m */,
-				92FF92E721E6F2ED001EBFF6 /* CustomAlertController.m */,
 				92FF92E821E6F2ED001EBFF6 /* BKCustomPickerView.h */,
+				92FF92E621E6F2ED001EBFF6 /* BKCustomPickerView.m */,
 				92FF92E921E6F2ED001EBFF6 /* CustomAlertController.h */,
+				92FF92E721E6F2ED001EBFF6 /* CustomAlertController.m */,
 			);
 			path = CustomAlertController;
 			sourceTree = "<group>";
@@ -1189,6 +1236,7 @@
 				92FF92E421E6EFF4001EBFF6 /* WebViewController.xib in Resources */,
 				929A188321E88B8A007FE304 /* BlogTypeTableViewController.xib in Resources */,
 				9172C60B21E6276D00303BE3 /* MBProgressHUD.bundle in Resources */,
+				91CC72BF21E9EA8A00EC8393 /* FriendListCell.xib in Resources */,
 				9172C5FE21E6276400303BE3 /* MJRefresh.bundle in Resources */,
 				929A189021E89843007FE304 /* BlogSettingTableViewCell.xib in Resources */,
 				92A31F1121E5CA52002659E5 /* Main.storyboard in Resources */,
@@ -1209,6 +1257,7 @@
 				92FF929E21E6DD1E001EBFF6 /* DACircularProgressView.m in Sources */,
 				92FF92E321E6EFF4001EBFF6 /* WebViewController.m in Sources */,
 				9172C65721E62F1A00303BE3 /* UserGroups.m in Sources */,
+				91CC72BE21E9EA8A00EC8393 /* FriendListCell.m in Sources */,
 				92FF92C921E6E877001EBFF6 /* UIImageView+PlayGIF.m in Sources */,
 				9172C5B821E6275700303BE3 /* SDWebImagePrefetcher.m in Sources */,
 				92FF92B321E6DD1E001EBFF6 /* ZLPhotoPickerAssetsViewController.m in Sources */,
@@ -1243,6 +1292,7 @@
 				9172C5F821E6276400303BE3 /* MJRefreshBackGifFooter.m in Sources */,
 				929A187E21E88B82007FE304 /* EditDiaryViewController.m in Sources */,
 				9172C60A21E6276D00303BE3 /* MBProgressHUD+Add.m in Sources */,
+				91CC72C721E9F02F00EC8393 /* UserHelper.m in Sources */,
 				92FF92B021E6DD1E001EBFF6 /* ZLPhotoAssets.m in Sources */,
 				9172C63D21E6278300303BE3 /* HTHorizontalSelectionListLabelCell.m in Sources */,
 				92FF92AD21E6DD1E001EBFF6 /* UIView+ZLExtension.m in Sources */,
@@ -1299,6 +1349,7 @@
 				9172C5FF21E6276400303BE3 /* MJRefreshConst.m in Sources */,
 				9172C63121E6277600303BE3 /* View+MASAdditions.m in Sources */,
 				9172C5FB21E6276400303BE3 /* MJRefreshGifHeader.m in Sources */,
+				91CC72C321E9EB9C00EC8393 /* FriendModel.m in Sources */,
 				9172C5B021E6275700303BE3 /* NSImage+WebCache.m in Sources */,
 				92A31F4A21E5E1AE002659E5 /* NSString+UIColor.m in Sources */,
 				9172C5BB21E6275800303BE3 /* UIImage+MultiFormat.m in Sources */,
@@ -1323,6 +1374,7 @@
 				9172C5B921E6275800303BE3 /* UIButton+WebCache.m in Sources */,
 				92FF92B821E6DD1E001EBFF6 /* ZLPhotoPickerFooterCollectionReusableView.m in Sources */,
 				92FF92B521E6DD1E001EBFF6 /* ZLPhotoPickerViewController.m in Sources */,
+				917CBDA521EA120F00CB0A6D /* UIViewController+Utilities.m in Sources */,
 				9172C63C21E6278300303BE3 /* HTHorizontalSelectionListCustomViewCell.m in Sources */,
 				92FF92A821E6DD1E001EBFF6 /* ZLPhotoPickerBrowserPhotoImageView.m in Sources */,
 				9172C5AE21E6275700303BE3 /* MKAnnotationView+WebCache.m in Sources */,

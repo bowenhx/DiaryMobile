@@ -83,6 +83,15 @@
             [self.view showHUDTitleView:netErr image:nil];
         } else {
             [self addItemViewsData:data];
+            
+            //保存分类对象
+            NSData *objData = [NSKeyedArchiver archivedDataWithRootObject:data];
+            //创建分类对象的路径
+            NSString *path = [BKTool getLibraryDirectoryPath:kBlogTypeKey];
+            //把数据写入文件
+            if ([objData writeToFile:path atomically:YES]) {
+                NSLog(@"Write File Cusseece");
+            }
         }
     }];
 }
@@ -130,7 +139,7 @@
     };
 }
 
-#pragma mark - 切换顶部按钮 @"最新",@"推薦",@"好友",@"我的"
+#pragma mark - 切换顶部按钮 @"最新",@"推薦"
 - (void)switchScrollerView {
     NSLog(@"select index = %ld",(long)self.selectedIndex);
     [_vTableViews enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -153,6 +162,6 @@
 
 
 - (void)editBlogAction {
-    
+    [super showNextControllerName:@"EditDiaryViewController" params:nil isPush:YES];
 }
 @end

@@ -36,7 +36,7 @@
 }
 - (void)loadNewData{
     if (_blogSetting == EditBlogSetting_Type) {
-        NSString *path = [BKTool getLibraryDirectoryPath:BlogTypeKey];
+        NSString *path = [BKTool getLibraryDirectoryPath:kBlogTypeKey];
         if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
             NSData *saveData = [NSData dataWithContentsOfFile:path];
             NSArray *arr = [NSKeyedUnarchiver unarchiveObjectWithData:saveData];
@@ -133,7 +133,6 @@
             [self.navigationController pushViewController:friendVC animated:YES];
             
         } else if (indexPath.row == 4) {
-            [BKGoogleStatistics mGoogleScreenAnalytics:kBlogPrivacyPwd];
             //凭密码可见
             [self addAlertViewAction];
         }else{

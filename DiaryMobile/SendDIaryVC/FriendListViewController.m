@@ -8,7 +8,7 @@
 
 #import "FriendListViewController.h"
 #import "FriendListCell.h"
-#import "UserInformationViewController.h"
+//#import "UserInformationViewController.h"
 #import "FriendModel.h"
 
 @interface FriendListViewController ()<UITableViewDataSource, UITableViewDelegate, FriendListCellDelegate>
@@ -28,7 +28,7 @@
     _selectIndex = 999;
     _friendList = [NSMutableArray array];
     _selectFriends = [NSMutableArray array];
-    self.view.backgroundColor = [UIColor colorViewBg];
+    self.view.backgroundColor = kViewNormalBackColor.color;
     
     //TableView
     if (!_tableView) {
@@ -41,7 +41,7 @@
         [self.view addSubview:_tableView];
         [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.bottom.equalTo(self.view);
-            make.top.equalTo(self.view).offset(NAV_BAR_HEIGHT);
+            make.top.equalTo(self.view).offset(kNAV_BAR_HEIGHT);
         }];
         _tableView.tableFooterView = [[UIView alloc] init];
         [_tableView registerNib:[UINib nibWithNibName:@"FriendListCell" bundle:nil] forCellReuseIdentifier:@"FriendListCell"];
@@ -80,13 +80,7 @@
     
     [self.navigationController popViewControllerAnimated:YES];
 }
-- (void)viewWillAppear:(BOOL)animated {
-    if (_friendType == FriendList_My) {
-        [BKGoogleStatistics mGoogleScreenAnalytics:kMyCenterFriendIndex];
-    } else {
-        [BKGoogleStatistics mGoogleScreenAnalytics:kBlogPrivacySelectedFrd];
-    }
-}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -99,16 +93,8 @@
 
 #pragma mark - Private Method
 - (void)requestFriendList{
-    if (_friendList.count) {
-        if (_friendType == FriendList_My) {
-            [BKGoogleStatistics mGoogleScreenAnalytics:kMyCenterFriendIndex];
-        } else {
-            [BKGoogleStatistics mGoogleScreenAnalytics:kBlogPrivacySelectedFrd];
-        }
-       
-    }
     [self.view showHUDActivityView:@"正在加載..." shade:NO];
-    [BKHttpUtil mHttpWithUrl:EAPI_Friend_List parameter:@{@"token":TOKEN, @"group": @"-1"} response:^(BKNetworkModel *model, NSString *netErr) {
+    [BaseNetworking mHttpWithUrl:kFriendList parameter:@{@"token":TOKEN, @"group": @"-1"} response:^(BKNetworkModel *model, NSString *netErr) {
         if (netErr) {
             [self.view showHUDTitleView:netErr image:nil];
         }else {
@@ -162,12 +148,12 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (_friendType == FriendList_My) {
-        FriendModel *model = [_friendList objectAtIndex:indexPath.row];
-        UserInformationViewController *userInfoVC = [[UserInformationViewController alloc] initWithNibName:@"UserInformationViewController" bundle:nil];
-        userInfoVC.avatar = model.avatar;
-        userInfoVC.uid = model.uid;
-        userInfoVC.name = model.username;
-        [self.navigationController pushViewController:userInfoVC animated:YES];
+//        FriendModel *model = [_friendList objectAtIndex:indexPath.row];
+//        UserInformationViewController *userInfoVC = [[UserInformationViewController alloc] initWithNibName:@"UserInformationViewController" bundle:nil];
+//        userInfoVC.avatar = model.avatar;
+//        userInfoVC.uid = model.uid;
+//        userInfoVC.name = model.username;
+//        [self.navigationController pushViewController:userInfoVC animated:YES];
     }else if (_friendType == FriendList_Select){
         FriendListCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         
@@ -193,18 +179,15 @@
 }
 #pragma mark - FriendListCellDelegate
 - (void)friendListCellDeleteButtonClick:(NSIndexPath *)indexPath{
-    
-    [[[UIAlertView alloc] initWithTitle:nil message:@"是否解除好友關係？"
-                       cancelButtonItem:[RIButtonItem itemWithLabel:@"取消" action:^{
-        DLog(@"取消");
-    }] otherButtonItems:[RIButtonItem itemWithLabel:@"確定" action:^{
-        
+    CustomAlertController *alertVC = [CustomAlertController alertController];
+    alertVC.message(@"是否解除好友關係？").cancelTitle(@"取消").confirmTitle(@"確定").alertStyle(alert).controller(self);
+    [alertVC show:nil confirmAction:^(UIAlertAction *action) {
         FriendModel *model = [_friendList objectAtIndex:indexPath.row];
         NSString *strId = [NSString stringWithFormat:@"%d",(int)model.uid];
-
+        
         [self.view showHUDActivityView:@"正在加載..." shade:NO];
-         //提交忽略信息到服務器
-        [BKHttpUtil mHttpWithUrl:EAPI_Friend_Delete parameter:@{@"token":TOKEN, @"uid":strId} response:^(BKNetworkModel *model, NSString *netErr) {
+        //提交忽略信息到服務器
+        [BaseNetworking mHttpWithUrl:kFriendDelete parameter:@{@"token":TOKEN, @"uid":strId} response:^(BKNetworkModel *model, NSString *netErr) {
             [self.view removeHUDActivity];
             if (netErr) {
                 [self.view showHUDTitleView:netErr image:nil];
@@ -218,8 +201,33 @@
                 }
             }
         }];
-        
-    }], nil] show];
+    } cancelAction:nil];
+//    [[[UIAlertView alloc] initWithTitle:nil message:@"是否解除好友關係？"
+//                       cancelButtonItem:[RIButtonItem itemWithLabel:@"取消" action:^{
+//        DLog(@"取消");
+//    }] otherButtonItems:[RIButtonItem itemWithLabel:@"確定" action:^{
+//        
+//        FriendModel *model = [_friendList objectAtIndex:indexPath.row];
+//        NSString *strId = [NSString stringWithFormat:@"%d",(int)model.uid];
+//
+//        [self.view showHUDActivityView:@"正在加載..." shade:NO];
+//         //提交忽略信息到服務器
+//        [BKHttpUtil mHttpWithUrl:EAPI_Friend_Delete parameter:@{@"token":TOKEN, @"uid":strId} response:^(BKNetworkModel *model, NSString *netErr) {
+//            [self.view removeHUDActivity];
+//            if (netErr) {
+//                [self.view showHUDTitleView:netErr image:nil];
+//            }else {
+//                //解除成功
+//                [self.view showHUDTitleView:model.message image:nil];
+//                if (model.status == 1) {
+//                    [_friendList removeObjectAtIndex:indexPath.row];
+//                    [_tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
+//                    [_tableView reloadData]; //indexPath已经改变，必须刷新表格，防止再次解除好友关系时候出错
+//                }
+//            }
+//        }];
+//        
+//    }], nil] show];
     
 }
 @end

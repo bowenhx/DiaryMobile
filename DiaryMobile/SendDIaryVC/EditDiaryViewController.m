@@ -10,18 +10,17 @@
 #import "KDefine.h"
 #import "UIImage+UIImageExt.h"
 #import "BlogTypeTableViewController.h"
-#import "UploadingFormData.h"
 #import "UserHelper.h"
 
-#define PHOTOS_WIDTH    60      //图片的宽
-#define PHOTOS_HEIGHT   60      //图片的高
-#define PHOTOS_X       (SCREEN_WIDTH - PHOTOS_WIDTH * 4 ) / 5   //图片的间距
+static float kPhotosW = 60.f;//图片的宽
+static float kPhotosH = 60.f;//图片的高
+
+#define PHOTOS_X       (kSCREEN_WIDTH - kPhotosW * 4 ) / 5   //图片的间距
 
 //最下面两个单元格的表，距离上面view的距离
-static CGFloat tableTopSpace = 40;
+static CGFloat kTableTopSpace = 40;
 
-@interface EditDiaryViewController ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,ZLPhotoPickerBrowserViewControllerDelegate, UIPopoverControllerDelegate,UITableViewDelegate,UITableViewDataSource,UITextViewDelegate>
-{
+@interface EditDiaryViewController ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,ZLPhotoPickerBrowserViewControllerDelegate, UIPopoverControllerDelegate,UITableViewDelegate,UITableViewDataSource,UITextViewDelegate> {
     __weak IBOutlet UIScrollView *_scrollView;
     
     __weak IBOutlet UITextField *_textField;
@@ -32,19 +31,18 @@ static CGFloat tableTopSpace = 40;
     
     __weak IBOutlet UILabel *textLab;
     
-    
     __weak IBOutlet UITableView *_tableView;
     
     __weak IBOutlet NSLayoutConstraint *_tableViewConstraintY;
     
-    
     NSArray     *_listData;
-    float img_W;
+    
+    float       img_W;
     
     UIView *_vPhotoBgView; //选择照片下面放置一个背景view，用于点击该view消失键盘操作。
 }
 @property (nonatomic , strong) UIButton *photoBtn; //添加照片btn
-@property (nonatomic , strong) NSMutableArray *assets;//照片数据源
+@property (nonatomic , strong) NSMutableArray *vAssets;//照片数据源
 @property (strong , nonatomic) UIPopoverController* imagePickerPopover;
 @property (nonatomic , strong) NSMutableArray *typeNames;
 @property (nonatomic , assign) NSUInteger tempTypeIndex;//临时标记站贴分类选中的index
@@ -54,19 +52,20 @@ static CGFloat tableTopSpace = 40;
 @property (nonatomic , assign) NSUInteger catid;//分类id
 @end
 
-@implementation EditBlogViewController
+@implementation EditDiaryViewController
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"kSelectImageNotificatiion" object:nil];
 }
-- (NSMutableArray *)assets{
-    if (!_assets) {
-        _assets = [NSMutableArray array];
+- (NSMutableArray *)vAssets {
+    if (!_vAssets) {
+        _vAssets = [NSMutableArray array];
     }
-    return _assets;
+    return _vAssets;
 }
-- (NSMutableArray *)typeNames{
+
+- (NSMutableArray *)typeNames {
     if (!_typeNames) {
-        NSString *path = [BKTool getLibraryDirectoryPath:BlogTypeKey];
+        NSString *path = [BKTool getLibraryDirectoryPath:kBlogTypeKey];
         if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
             NSData *saveData = [NSData dataWithContentsOfFile:path];
             NSArray *arr = [NSKeyedUnarchiver unarchiveObjectWithData:saveData];
@@ -95,7 +94,7 @@ static CGFloat tableTopSpace = 40;
                     //保存分类对象
                     NSData *objData = [NSKeyedArchiver archivedDataWithRootObject:data];
                     //创建分类对象的路径
-                    NSString *path = [BKTool getLibraryDirectoryPath:BlogTypeKey];
+                    NSString *path = [BKTool getLibraryDirectoryPath:kBlogTypeKey];
                     //把数据写入文件
                     if ([objData writeToFile:path atomically:YES]) {
                         NSLog(@"Write File Cusseece");
@@ -122,8 +121,8 @@ static CGFloat tableTopSpace = 40;
 
 
 - (void)loadNewView{
-    lineLabel.backgroundColor = [UIColor colorCellLineBg];
-    _tableViewConstraintY.constant = self.photoBtn.h + tableTopSpace;
+    lineLabel.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    _tableViewConstraintY.constant = self.photoBtn.h + kTableTopSpace;
 }
 - (void)loadNewData{
    
@@ -158,9 +157,9 @@ static CGFloat tableTopSpace = 40;
     [self showActivityView:@"0%"];
 
     MBProgressHUD *HUDpro = (MBProgressHUD *)[self.view viewWithTag:0xffff];
-    NSArray *files = [NSArray uploadingImageFiles:self.assets];
+    NSArray *files = [self uploadingImageFiles:self.vAssets];
     
-    [[BKNetworking share] upload:EAPI_SendBlog params:dicInfo files:files precent:^(float precent) {
+    [[BKNetworking share] upload:kSendBlog params:dicInfo files:files precent:^(float precent) {
         NSString *progressStr = [NSString stringWithFormat:@"%.1f", precent * 100];
         progressStr = [progressStr stringByAppendingString:@"%"];
         if (HUDpro) HUDpro.labelText = progressStr;
@@ -175,7 +174,7 @@ static CGFloat tableTopSpace = 40;
             
             [bself.view showHUDTitleView:model.message image:nil];
             //通知我的日志页面，刷新ui
-            [[NSNotificationCenter defaultCenter] postNotificationName:kPublishBlogSuccessNotification object:nil];
+            //[[NSNotificationCenter defaultCenter] postNotificationName:kPublishBlogSuccessNotification object:nil];
             [self performSelector:@selector(mPopViewController) withObject:self afterDelay:1];
         }else{
             [bself.view showHUDTitleView:model.message image:nil];
@@ -185,17 +184,17 @@ static CGFloat tableTopSpace = 40;
 }
 
 
-- (UIButton *)photoBtn{
+- (UIButton *)photoBtn {
     if (!_photoBtn) {
         _vPhotoBgView = [[UIView alloc] init];
-        _vPhotoBgView.frame = CGRectMake(0, _textView.max_Y+10, SCREEN_WIDTH, PHOTOS_HEIGHT + 20);
+        _vPhotoBgView.frame = CGRectMake(0, _textView.max_Y+10, kSCREEN_WIDTH, kPhotosH + 20);
         //view添加点击事件，用于点击后，键盘下去
         UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(mKeyboardHidden)];
         [_vPhotoBgView addGestureRecognizer:tapGesture];
         [_scrollView addSubview:_vPhotoBgView];
 
         _photoBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        _photoBtn.frame = CGRectMake(PHOTOS_X, _textView.max_Y+10, PHOTOS_WIDTH, PHOTOS_HEIGHT);
+        _photoBtn.frame = CGRectMake(PHOTOS_X, _textView.max_Y+10, kPhotosW, kPhotosH);
         [_photoBtn setBackgroundImage:[UIImage imageNamed:@"Post_vi_Add"] forState:UIControlStateNormal];
         [_photoBtn addTarget:self action:@selector(selectPhotoAction:) forControlEvents:UIControlEventTouchUpInside];
         [_scrollView addSubview:_photoBtn];
@@ -205,26 +204,26 @@ static CGFloat tableTopSpace = 40;
 
 - (void)addPhotosImage{
     
-    DLog(@"width  = %f",SCREEN_WIDTH);
+    DLog(@"width  = %f",kSCREEN_WIDTH);
     float Y = _textView.max_Y+10;
     // 加一是为了有个添加button
-    NSInteger count = self.assets.count +1;
+    NSInteger count = self.vAssets.count +1;
     for (int i=0;i < count; i++) {
-        float addBtnX = PHOTOS_X + (PHOTOS_X + PHOTOS_WIDTH) * (i%4);
-        float addBtnY = Y + (10 + PHOTOS_HEIGHT) * (i/4);
+        float addBtnX = PHOTOS_X + (PHOTOS_X + kPhotosW) * (i%4);
+        float addBtnY = Y + (10 + kPhotosH) * (i/4);
         
         //多算一个frame确定添加按钮的坐标位置
-        if (i == self.assets.count) {
+        if (i == self.vAssets.count) {
             
             //选择照片后，重新设置背景veiw的高度
-            CGFloat  viewHeight = (i / 4 + 1) * (PHOTOS_HEIGHT + 20);
-            _vPhotoBgView.frame = CGRectMake(0, _textView.max_Y+10, SCREEN_WIDTH, viewHeight);
+            CGFloat  viewHeight = (i / 4 + 1) * (kPhotosH + 20);
+            _vPhotoBgView.frame = CGRectMake(0, _textView.max_Y+10, kSCREEN_WIDTH, viewHeight);
             
             if (i>8) {
                 self.photoBtn.hidden = YES;
             } else {
                 self.photoBtn.hidden = NO;
-                self.photoBtn.frame = CGRectMake(addBtnX, addBtnY, PHOTOS_WIDTH, PHOTOS_HEIGHT);
+                self.photoBtn.frame = CGRectMake(addBtnX, addBtnY, kPhotosW, kPhotosH);
 
                 [_scrollView addSubview:_photoBtn];
             }
@@ -232,9 +231,9 @@ static CGFloat tableTopSpace = 40;
         }
         
         UIButton *btnImage = [UIButton buttonWithType:UIButtonTypeCustom];
-        btnImage.frame = CGRectMake(addBtnX, addBtnY, PHOTOS_WIDTH, PHOTOS_HEIGHT);
+        btnImage.frame = CGRectMake(addBtnX, addBtnY, kPhotosW, kPhotosH);
         btnImage.tag = i;
-        UIImage *image = [self.assets[i] thumbImage];
+        UIImage *image = [self.vAssets[i] thumbImage];
         [btnImage setBackgroundImage:image forState:UIControlStateNormal];
         [_scrollView addSubview:btnImage];
         [btnImage addTarget:self action:@selector(didSelectPhotoImage:) forControlEvents:UIControlEventTouchUpInside];
@@ -242,7 +241,7 @@ static CGFloat tableTopSpace = 40;
     }
     
     NSInteger spaceH = ceilf(count / 4.0);
-    _tableViewConstraintY.constant = (_photoBtn.h +10) * spaceH + tableTopSpace;
+    _tableViewConstraintY.constant = (_photoBtn.h +10) * spaceH + kTableTopSpace;
 }
 
 
@@ -292,9 +291,7 @@ static CGFloat tableTopSpace = 40;
     }
 }
 
-- (void)didSelectPhotoImage:(UIButton *)btn
-{
-    [BKGoogleStatistics mGoogleScreenAnalytics:kBlogPreviewImage];
+- (void)didSelectPhotoImage:(UIButton *)btn {
     // 图片游览器
     ZLPhotoPickerBrowserViewController *pickerBrowser = [[ZLPhotoPickerBrowserViewController alloc] init];
     
@@ -303,7 +300,7 @@ static CGFloat tableTopSpace = 40;
     // 数据源/delegate
     pickerBrowser.delegate = self;
     pickerBrowser.editing = YES;
-    pickerBrowser.photos = self.assets;
+    pickerBrowser.photos = self.vAssets;
     // 当前选中的值
     pickerBrowser.currentIndex = btn.tag;
     // 展示控制器
@@ -313,25 +310,25 @@ static CGFloat tableTopSpace = 40;
 
 //添加统计 //// 發佈主題 > 點撃拍照圖片 > 點撃手機相冊 >點撃相冊，
 - (void)addGoogleStatisticsAction {
-    [BKGoogleStatistics mGoogleScreenAnalytics:kBlogSelectImage];
+    
 }
 
 
 #pragma mark 选择相册
 - (void)localPhoto {
-    [BKGoogleStatistics mGoogleScreenAnalytics:kBlogSelectAlbum];
+    
     ZLPhotoPickerViewController *pickerVc = [[ZLPhotoPickerViewController alloc] init];
     pickerVc.status = PickerViewShowStatusCameraRoll;
     pickerVc.maxCount = 9;
-    pickerVc.selectPickers = self.assets;
+    pickerVc.selectPickers = self.vAssets;
     pickerVc.photoStatus = PickerPhotoStatusPhotos;
     // Desc Show Photos, And Suppor Camera
     pickerVc.topShowPhotoPicker = YES;
     // CallBack
     __weak typeof(self) bself = self;
     pickerVc.callBack = ^(NSArray<ZLPhotoAssets *> *status){
-        if (_assets.count)
-            [_assets removeAllObjects];
+        if (_vAssets.count)
+            [_vAssets removeAllObjects];
         
         for (ZLPhotoAssets *asset in status) {
             ZLPhotoPickerBrowserPhoto *photo = [[ZLPhotoPickerBrowserPhoto alloc] init];
@@ -344,13 +341,13 @@ static CGFloat tableTopSpace = 40;
                 ZLCamera *camera = (ZLCamera *)asset;
                 photo.photoImage = [camera photoImage];
             }
-            [_assets addObject:photo];
+            [_vAssets addObject:photo];
         }
         [bself removeScrollViewSuperViewBtn];
     };
     
-    if (mIsPad) {
-        if (iOS8) {
+    if (kIS_IPAD) {
+        if (kiOS8) {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 [self presentViewController:pickerVc animated:YES completion:nil];
             }];
@@ -368,7 +365,7 @@ static CGFloat tableTopSpace = 40;
 #pragma mark 拍照
 - (void)takePhoto
 {
-    if (self.assets.count >= 9) {
+    if (self.vAssets.count >= 9) {
         [self.view showHUDTitleView:@"只能選擇9張圖片上傳" image:nil];
         return;
     }
@@ -394,8 +391,8 @@ static CGFloat tableTopSpace = 40;
             imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
             imagePicker.videoQuality = UIImagePickerControllerQualityTypeIFrame960x540;
             @WeakObj(self);
-            if (mIsPad) {
-                if (iOS8) {
+            if (kIS_IPAD) {
+                if (kiOS8) {
                     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                         [selfWeak presentViewController:imagePicker animated:YES completion:nil];
                     }];
@@ -432,12 +429,12 @@ static CGFloat tableTopSpace = 40;
     assets.assetURL = [NSURL URLWithString:path];
     
     ZLPhotoPickerBrowserPhoto *photo = [[ZLPhotoPickerBrowserPhoto alloc] init];
-    photo.asset = assets;
+    photo.asset = _vAssets;
     photo.photoImage = image;
     photo.thumbImage = image;
     photo.photoURL = [NSURL URLWithString:path];
     
-    [self.assets addObject:photo];
+    [self.vAssets addObject:photo];
     
     [self removeScrollViewSuperViewBtn];
     
@@ -446,8 +443,8 @@ static CGFloat tableTopSpace = 40;
 
 #pragma mark - <ZLPhotoPickerBrowserViewControllerDelegate>
 - (void)photoBrowser:(ZLPhotoPickerBrowserViewController *)photoBrowser removePhotoAtIndex:(NSInteger)index{
-    if (self.assets.count > index) {
-        [self.assets removeObjectAtIndex:index];
+    if (self.vAssets.count > index) {
+        [self.vAssets removeObjectAtIndex:index];
         [self removeScrollViewSuperViewBtn];
     }
 }
@@ -550,6 +547,28 @@ static CGFloat tableTopSpace = 40;
     [super didReceiveMemoryWarning];
 }
 
+- (NSArray *)uploadingImageFiles:(NSArray *)files {
+    NSMutableArray *imageArr = [NSMutableArray arrayWithCapacity:files.count];
+    
+    [files enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        UIImage *image = nil;
+        if ([obj isKindOfClass:[ZLPhotoPickerBrowserPhoto class]]) {
+            ZLPhotoPickerBrowserPhoto *photo = (ZLPhotoPickerBrowserPhoto *)obj;
+            ZLPhotoAssets *asset = photo.asset;
+            if (asset && [asset isKindOfClass:[ZLPhotoAssets class]]) {
+                image = asset.originImage;
+            }else {
+                image = photo.photoImage;
+            }
+            
+            if (image) {
+                NSString *name = [NSString stringWithFormat:@"attach%lu",(unsigned long)++idx];
+                [imageArr addObject:@[name , image]];
+            }
+        }
+    }];
+    return imageArr;
+}
 
 
 @end

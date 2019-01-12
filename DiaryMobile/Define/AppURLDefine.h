@@ -30,5 +30,28 @@ static NSString *const kSendBlog = @"?mod=home&op=blogpost";
 //查看日志详情
 static NSString *const kBlogDetail = @"?mod=home&op=blogshow";
 
+#pragma mark ----------- 好友
+//好友列表
+static NSString *const kFriendList = @"?mod=home&op=friend";
+
+//添加或同意好友添加
+static NSString *const kFriendAdd   =   @"?mod=home&op=friendadd";
+
+//刪除或忽略好友
+static NSString *const kFriendDelete   =   @"?mod=home&op=frienddelete";
+//打招呼相關操作
+static NSString *const kGreeting   =  @"?mod=home&op=poke";
+
+//相册
+static NSString *const kPhotoGallery = @"?mod=home&op=album";
+
+
+
+
+//保存日志分类对象key
+static NSString *const kBlogTypeKey = @"blogType";
+
+
+
 
 #endif /* AppURLDefine_h */
