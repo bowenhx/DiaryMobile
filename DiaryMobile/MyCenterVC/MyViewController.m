@@ -52,11 +52,11 @@
 }
 
 - (UIView *)footerBtn {
-    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, 80)];
-    
+    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, 100)];
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(20, footerView.h - 44, kSCREEN_WIDTH - 40, 44);
-    button.backgroundColor = kTabBarColor.color;
+    UIImage *image = [[UIImage imageNamed:@"header_bg"] stretchableImageWithLeftCapWidth:1 topCapHeight:1];
+    [button setBackgroundImage:image forState:UIControlStateNormal];
     button.layer.masksToBounds = YES;
     button.layer.cornerRadius = 3;
     [button setTitle:@"登錄" forState:UIControlStateNormal];

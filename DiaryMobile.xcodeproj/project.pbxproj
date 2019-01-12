@@ -84,7 +84,6 @@
 		929A188B21E88F6D007FE304 /* FriendListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A188A21E88F6C007FE304 /* FriendListViewController.m */; };
 		929A189021E89843007FE304 /* BlogSettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 929A188D21E89843007FE304 /* BlogSettingTableViewCell.xib */; };
 		929A189121E89843007FE304 /* BlogSettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A188E21E89843007FE304 /* BlogSettingTableViewCell.m */; };
-		929A189421E8994D007FE304 /* FriendListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A189321E8994D007FE304 /* FriendListVC.m */; };
 		92A31F0B21E5CA52002659E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A31F0A21E5CA52002659E5 /* AppDelegate.m */; };
 		92A31F0E21E5CA52002659E5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A31F0D21E5CA52002659E5 /* ViewController.m */; };
 		92A31F1121E5CA52002659E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92A31F0F21E5CA52002659E5 /* Main.storyboard */; };
@@ -309,8 +308,6 @@
 		929A188D21E89843007FE304 /* BlogSettingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlogSettingTableViewCell.xib; sourceTree = "<group>"; };
 		929A188E21E89843007FE304 /* BlogSettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogSettingTableViewCell.m; sourceTree = "<group>"; };
 		929A188F21E89843007FE304 /* BlogSettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogSettingTableViewCell.h; sourceTree = "<group>"; };
-		929A189221E8994D007FE304 /* FriendListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendListVC.h; sourceTree = "<group>"; };
-		929A189321E8994D007FE304 /* FriendListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendListVC.m; sourceTree = "<group>"; };
 		92A31F0621E5CA52002659E5 /* DiaryMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiaryMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A31F0921E5CA52002659E5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		92A31F0A21E5CA52002659E5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -792,8 +789,6 @@
 				929A188021E88B89007FE304 /* BlogTypeTableViewController.h */,
 				929A188221E88B8A007FE304 /* BlogTypeTableViewController.m */,
 				929A188121E88B89007FE304 /* BlogTypeTableViewController.xib */,
-				929A189221E8994D007FE304 /* FriendListVC.h */,
-				929A189321E8994D007FE304 /* FriendListVC.m */,
 				91CC72C021E9EB8100EC8393 /* Models */,
 				929A188C21E89804007FE304 /* VIews */,
 			);
@@ -1299,7 +1294,6 @@
 				9172C60021E6276400303BE3 /* NSBundle+MJRefresh.m in Sources */,
 				9172C62E21E6277600303BE3 /* MASViewConstraint.m in Sources */,
 				9172C64721E628FB00303BE3 /* BaseNetworking.m in Sources */,
-				929A189421E8994D007FE304 /* FriendListVC.m in Sources */,
 				92A31F4F21E5EBD8002659E5 /* DiaryListViewController.m in Sources */,
 				92FF92BA21E6DD1E001EBFF6 /* ZLPhotoPickerGroupTableViewCell.m in Sources */,
 				92FF92DB21E6ED2F001EBFF6 /* BlogListCell.m in Sources */,
