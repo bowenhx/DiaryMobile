@@ -12,7 +12,7 @@
 @implementation UserHelper
 
 
-+ (void)mClearUserInfoData{
++ (void)mClearUserInfoData {
     
     //清空NSUserDefaults下的内容
     NSString*appDomain = [[NSBundle mainBundle] bundleIdentifier];
@@ -31,22 +31,6 @@
     NSString *path = [BKTool getLibraryDirectoryPath:kBlogTypeKey];
     [self removeFilePath:path];
     
-}
-
-#pragma mark - 设置kmall缓存，判断用户登录状态，同步登录或退出kmall网站，shopping页面用到
-+ (NSString *)setKmallWebCookies {
-    int randomNum = [self getRandomNumber:1000 to:9999];
-    NSString *randomAndUid = [NSString stringWithFormat:@"%i%@", randomNum, USERID];
-    NSData *nsdata = [randomAndUid dataUsingEncoding:NSUTF8StringEncoding];
-    NSString *base64Encoded = [nsdata base64EncodedStringWithOptions:0];
-    NSString *cookie = @"";
-    
-    if (TOKEN.length) {
-        cookie = [@"ilink_stamp_value" stringByAppendingFormat:@"=%@",base64Encoded];
-    } else {
-        cookie = [@"ilink_stamp_logout_value" stringByAppendingFormat:@"=%@",base64Encoded];
-    }
-    return cookie;
 }
 
 

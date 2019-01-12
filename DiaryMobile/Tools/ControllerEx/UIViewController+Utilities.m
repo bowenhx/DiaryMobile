@@ -19,7 +19,7 @@
     UIViewController *controller = [[NSClassFromString(className) alloc] init];
     if (params) [controller setParames:params];
     if (isPush) {
-        self.hidesBottomBarWhenPushed = YES;
+        //self.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:controller animated:YES];
     } else {
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:controller];

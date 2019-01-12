@@ -18,9 +18,6 @@
 ///清除用户信息
 + (void)mClearUserInfoData;
 
-//设置kmall缓存，判断用户登录状态，同步登录或退出kmall网站，shopping页面用到
-+ (NSString *)setKmallWebCookies;
-
 
 /**
  本地保存一个拍照图片
@@ -40,14 +37,6 @@
 + (NSString *)getImagePath:(NSString *)file;
 
 
-/**
- 数据统计，跟踪用户信息
-
- @param eventType    跟踪的事件类型，事件在BKAnalyticsConst中定义
- @param dicExtraData 可以附加任何信息，以键值对的形式，该参数也可以为空
- */
-+ (void)trackingUserDataForType:(NSString *)eventType
-                   dicExtraData:(NSDictionary *)dicExtraData;
 
 
 @end

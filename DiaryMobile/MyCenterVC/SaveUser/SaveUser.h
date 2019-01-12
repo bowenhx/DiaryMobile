@@ -26,7 +26,7 @@
  *
  *  @param  user  需要存储的用户对象
  */
-+(void)mSaveUser:(User *)user;
++ (void)mSaveUser:(User *)user;
 
 
 /**
@@ -34,6 +34,6 @@
  *
  *  @return 返回user信息
  */
-+(User *)mGetUser;
++ (User *)mGetUser;
 
 @end

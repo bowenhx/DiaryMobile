@@ -168,7 +168,7 @@
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
     [self.view removeHUDActivity];
     if ([self.vNavTitle isEqualToString:@"日誌"]) {
-        [webView evaluateJavaScript:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '130%'" completionHandler:nil];
+        [webView evaluateJavaScript:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '120%'" completionHandler:nil];
     }
 }
 

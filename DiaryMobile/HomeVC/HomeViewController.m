@@ -46,7 +46,12 @@
     
 }
 
-
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (!_vTableViews.count) {
+        [self homeLoadNewData];
+    }
+}
 
 
 - (void)loadNewView {
@@ -75,7 +80,7 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"def_btn_Edit_unpressed"]                                 style:UIBarButtonItemStylePlain target:self action:@selector(editBlogAction)];
 }
 
-- (void)loadNewData {
+- (void)homeLoadNewData {
     [self.view showHUDActivityView:@"正在加載..." shade:NO];
     [BlogTypeList getBlogTypeListBlock:^(NSArray *data, NSString *netErr) {
         [self.view removeHUDActivity];
@@ -160,8 +165,9 @@
     [self refreshTabLoadData];
 }
 
-
 - (void)editBlogAction {
     [super showNextControllerName:@"EditDiaryViewController" params:nil isPush:YES];
 }
+
+
 @end
