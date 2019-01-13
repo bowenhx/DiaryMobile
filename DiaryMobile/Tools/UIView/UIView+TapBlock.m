@@ -1,7 +1,7 @@
 /**
  -  UIView+TapBlock.m
  -  BKSDK
- -  Created by HY on 16/12/22.
+ -  Created by ligb on 16/12/22.
  -  Copyright © 2016年 BaByKingdom. All rights reserved.
  */
 

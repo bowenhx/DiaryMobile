@@ -2,7 +2,7 @@
 //  WebViewController.m
 //  EduKingdom
 //
-//  Created by HY on 16/7/18.
+//  Created by ligb on 16/7/18.
 //  Copyright © 2016年 com.mobile-kingdom.ekapps. All rights reserved.
 //
 #import <WebKit/WebKit.h>

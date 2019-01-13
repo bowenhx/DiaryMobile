@@ -1,7 +1,7 @@
 /**
  -  UserHelper.h
  -  BKMobile
- -  Created by HY on 17/1/9.
+ -  Created by ligb on 17/1/9.
  -  Copyright © 2017年 com.mobile-kingdom.bkapps. All rights reserved.
  -  工具类，有关用户的一些常用公共方法。
  -  清除用户信息

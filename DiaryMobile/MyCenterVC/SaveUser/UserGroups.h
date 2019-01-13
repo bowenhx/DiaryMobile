@@ -1,7 +1,7 @@
 /**
  -  UserGroups.h
  -  BKSDK
- -  Created by HY on 16/11/24.
+ -  Created by ligb on 16/11/24.
  -  Copyright © 2016年 BaByKingdom. All rights reserved.
  -  存储用户下groups信息，使用方法：
      User *user = [SaveUser mGetUser];

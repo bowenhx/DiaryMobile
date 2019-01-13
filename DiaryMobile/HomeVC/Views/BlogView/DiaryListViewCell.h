@@ -1,7 +1,7 @@
 /**
- -  BlogListCell.h
+ -  DiaryListViewCell.h
  -  EKHKAPP
- -  Created by HY on 2017/11/1.
+ -  Created by ligb on 2017/11/1.
  -  Copyright © 2017年 BaByKingdom. All rights reserved.
  -  说明：日志列表cell
  */
@@ -14,7 +14,7 @@ typedef NS_ENUM(NSInteger, EKBlogCellType) {
     EKBlogCellTypeWithMyBlog,     //我的日志列表
 };
 
-@interface BlogListCell : UITableViewCell
+@interface DiaryListViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *userImg;
 

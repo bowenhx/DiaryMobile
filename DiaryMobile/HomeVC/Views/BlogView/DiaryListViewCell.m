@@ -1,16 +1,16 @@
 /**
- -  BlogListCell.m
+ -  DiaryListViewCell.m
  -  EKHKAPP
- -  Created by HY on 2017/11/1.
+ -  Created by ligb on 2017/11/1.
  -  Copyright © 2017年 BaByKingdom. All rights reserved.
  -  说明：日志列表cell
  */
 
-#import "BlogListCell.h"
+#import "DiaryListViewCell.h"
 
 
 
-@implementation BlogListCell
+@implementation DiaryListViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

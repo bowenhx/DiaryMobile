@@ -137,9 +137,9 @@
 		92FF92C921E6E877001EBFF6 /* UIImageView+PlayGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FF92C821E6E877001EBFF6 /* UIImageView+PlayGIF.m */; };
 		92FF92CD21E6EA6E001EBFF6 /* BKSaveData.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FF92CB21E6EA6E001EBFF6 /* BKSaveData.m */; };
 		92FF92DA21E6ED2F001EBFF6 /* CustomScrollerHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FF92D221E6ED2F001EBFF6 /* CustomScrollerHeadView.m */; };
-		92FF92DB21E6ED2F001EBFF6 /* BlogListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FF92D521E6ED2F001EBFF6 /* BlogListCell.m */; };
+		92FF92DB21E6ED2F001EBFF6 /* DiaryListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FF92D521E6ED2F001EBFF6 /* DiaryListViewCell.m */; };
 		92FF92DC21E6ED2F001EBFF6 /* CustomItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FF92D721E6ED2F001EBFF6 /* CustomItemView.m */; };
-		92FF92DD21E6ED2F001EBFF6 /* BlogListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92FF92D821E6ED2F001EBFF6 /* BlogListCell.xib */; };
+		92FF92DD21E6ED2F001EBFF6 /* DiaryListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92FF92D821E6ED2F001EBFF6 /* DiaryListViewCell.xib */; };
 		92FF92DE21E6ED2F001EBFF6 /* LogListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FF92D921E6ED2F001EBFF6 /* LogListTableView.m */; };
 		92FF92E321E6EFF4001EBFF6 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FF92E021E6EFF3001EBFF6 /* WebViewController.m */; };
 		92FF92E421E6EFF4001EBFF6 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92FF92E121E6EFF3001EBFF6 /* WebViewController.xib */; };
@@ -414,14 +414,14 @@
 		92FF92C821E6E877001EBFF6 /* UIImageView+PlayGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+PlayGIF.m"; sourceTree = "<group>"; };
 		92FF92CB21E6EA6E001EBFF6 /* BKSaveData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKSaveData.m; sourceTree = "<group>"; };
 		92FF92CC21E6EA6E001EBFF6 /* BKSaveData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKSaveData.h; sourceTree = "<group>"; };
-		92FF92D121E6ED2F001EBFF6 /* BlogListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogListCell.h; sourceTree = "<group>"; };
+		92FF92D121E6ED2F001EBFF6 /* DiaryListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryListViewCell.h; sourceTree = "<group>"; };
 		92FF92D221E6ED2F001EBFF6 /* CustomScrollerHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomScrollerHeadView.m; sourceTree = "<group>"; };
 		92FF92D321E6ED2F001EBFF6 /* CustomItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomItemView.h; sourceTree = "<group>"; };
 		92FF92D421E6ED2F001EBFF6 /* LogListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogListTableView.h; sourceTree = "<group>"; };
-		92FF92D521E6ED2F001EBFF6 /* BlogListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogListCell.m; sourceTree = "<group>"; };
+		92FF92D521E6ED2F001EBFF6 /* DiaryListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryListViewCell.m; sourceTree = "<group>"; };
 		92FF92D621E6ED2F001EBFF6 /* CustomScrollerHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomScrollerHeadView.h; sourceTree = "<group>"; };
 		92FF92D721E6ED2F001EBFF6 /* CustomItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomItemView.m; sourceTree = "<group>"; };
-		92FF92D821E6ED2F001EBFF6 /* BlogListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlogListCell.xib; sourceTree = "<group>"; };
+		92FF92D821E6ED2F001EBFF6 /* DiaryListViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiaryListViewCell.xib; sourceTree = "<group>"; };
 		92FF92D921E6ED2F001EBFF6 /* LogListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogListTableView.m; sourceTree = "<group>"; };
 		92FF92E021E6EFF3001EBFF6 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		92FF92E121E6EFF3001EBFF6 /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
@@ -1123,9 +1123,9 @@
 		92FF92D021E6ED2F001EBFF6 /* BlogView */ = {
 			isa = PBXGroup;
 			children = (
-				92FF92D121E6ED2F001EBFF6 /* BlogListCell.h */,
-				92FF92D521E6ED2F001EBFF6 /* BlogListCell.m */,
-				92FF92D821E6ED2F001EBFF6 /* BlogListCell.xib */,
+				92FF92D121E6ED2F001EBFF6 /* DiaryListViewCell.h */,
+				92FF92D521E6ED2F001EBFF6 /* DiaryListViewCell.m */,
+				92FF92D821E6ED2F001EBFF6 /* DiaryListViewCell.xib */,
 				92FF92D621E6ED2F001EBFF6 /* CustomScrollerHeadView.h */,
 				92FF92D221E6ED2F001EBFF6 /* CustomScrollerHeadView.m */,
 				92FF92D421E6ED2F001EBFF6 /* LogListTableView.h */,
@@ -1235,7 +1235,7 @@
 				9172C5FE21E6276400303BE3 /* MJRefresh.bundle in Resources */,
 				929A189021E89843007FE304 /* BlogSettingTableViewCell.xib in Resources */,
 				92A31F1121E5CA52002659E5 /* Main.storyboard in Resources */,
-				92FF92DD21E6ED2F001EBFF6 /* BlogListCell.xib in Resources */,
+				92FF92DD21E6ED2F001EBFF6 /* DiaryListViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1296,7 +1296,7 @@
 				9172C64721E628FB00303BE3 /* BaseNetworking.m in Sources */,
 				92A31F4F21E5EBD8002659E5 /* DiaryListViewController.m in Sources */,
 				92FF92BA21E6DD1E001EBFF6 /* ZLPhotoPickerGroupTableViewCell.m in Sources */,
-				92FF92DB21E6ED2F001EBFF6 /* BlogListCell.m in Sources */,
+				92FF92DB21E6ED2F001EBFF6 /* DiaryListViewCell.m in Sources */,
 				92FF92AF21E6DD1E001EBFF6 /* ZLPhotoPickerGroup.m in Sources */,
 				92FF92EA21E6F2ED001EBFF6 /* BKCustomPickerView.m in Sources */,
 				92FF92EB21E6F2ED001EBFF6 /* CustomAlertController.m in Sources */,

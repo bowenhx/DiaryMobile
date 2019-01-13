@@ -1,7 +1,7 @@
 /**
  -  Tool.m
  -  BKSDK
- -  Created by HY on 16/11/11.
+ -  Created by ligb on 16/11/11.
  -  Copyright © 2016年 BaByKingdom. All rights reserved.
  */
 

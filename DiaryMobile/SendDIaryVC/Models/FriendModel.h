@@ -2,7 +2,7 @@
 //  FriendModel.h
 //  BKMobile
 //
-//  Created by HY on 16/5/26.
+//  Created by ligb on 16/5/26.
 //  Copyright © 2016年 com.mobile-kingdom.bkapps. All rights reserved.
 //
 //  我的页面，我的好友模型

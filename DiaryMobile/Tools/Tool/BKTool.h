@@ -1,7 +1,7 @@
 /**
  -  Tool.h
  -  BKSDK
- -  Created by HY on 16/11/11.
+ -  Created by ligb on 16/11/11.
  -  Copyright © 2016年 BaByKingdom. All rights reserved.
  -  工具类，项目中常用方法汇集，包含
  -  判断一个字符串是否为整形，

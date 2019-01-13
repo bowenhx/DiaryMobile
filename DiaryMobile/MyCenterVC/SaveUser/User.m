@@ -1,7 +1,7 @@
 /**
  -  User.m
  -  BKSDK
- -  Created by HY on 16/11/24.
+ -  Created by ligb on 16/11/24.
  -  Copyright © 2016年 BaByKingdom. All rights reserved.
  */
 

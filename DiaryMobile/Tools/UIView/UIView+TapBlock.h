@@ -1,7 +1,7 @@
 /**
  -  UIView+TapBlock.h
  -  BKSDK
- -  Created by HY on 16/12/22.
+ -  Created by ligb on 16/12/22.
  -  Copyright © 2016年 BaByKingdom. All rights reserved.
  -  UIView的扩充类，快捷添加点击，长按手势，使用block回调块处理点击
  */

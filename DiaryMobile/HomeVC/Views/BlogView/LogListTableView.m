@@ -14,10 +14,10 @@
 //#import "MyBlogListViewController.h"
 //#import "MotifViewController.h"
 //#import "LogListViewController.h"
-#import "BlogListCell.h"
+#import "DiaryListViewCell.h"
 //#import "BKGoogleStatistics.h"
 
-static NSString *BLOG_CELL = @"BlogListCell";
+static NSString *BLOG_CELL = @"DiaryListViewCell";
 
 @interface LogListTableView()<UITableViewDelegate,UITableViewDataSource>
 
@@ -234,7 +234,7 @@ static NSString *BLOG_CELL = @"BlogListCell";
     return _dataSource.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    BlogListCell *cell = [_tabView dequeueReusableCellWithIdentifier:BLOG_CELL forIndexPath:indexPath];
+    DiaryListViewCell *cell = [_tabView dequeueReusableCellWithIdentifier:BLOG_CELL forIndexPath:indexPath];
     
     EKBlogCellType vType = EKBlogCellTypeWithNormalBlog;
     if (_blogListAll == BlogList_My) {

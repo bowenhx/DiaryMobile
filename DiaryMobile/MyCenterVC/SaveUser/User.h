@@ -1,7 +1,7 @@
 /**
  -  User.h
  -  BKSDK
- -  Created by HY on 16/11/24.
+ -  Created by ligb on 16/11/24.
  -  Copyright © 2016年 BaByKingdom. All rights reserved.
  -  用户信息模型类,存储了当前登录用户的id，token等值。
  */

@@ -2,7 +2,7 @@
 /**
  -  UserHelper.m
  -  BKMobile
- -  Created by HY on 17/1/9.
+ -  Created by ligb on 17/1/9.
  -  Copyright © 2017年 com.mobile-kingdom.bkapps. All rights reserved.
  */
 

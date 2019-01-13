@@ -8,11 +8,11 @@
 
 #import "FriendsTableViewController.h"
 #import "KDefine.h"
-#import "BlogListCell.h"
+#import "DiaryListViewCell.h"
 #import "LogListModel.h"
 #import "WebViewController.h"
 
-static NSString *kBLOG_CELL = @"BlogListCell";
+static NSString *kBLOG_CELL = @"DiaryListViewCell";
 
 @interface FriendsTableViewController ()
 
@@ -147,7 +147,7 @@ static NSString *kBLOG_CELL = @"BlogListCell";
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    BlogListCell *cell = [tableView dequeueReusableCellWithIdentifier:kBLOG_CELL forIndexPath:indexPath];
+    DiaryListViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kBLOG_CELL forIndexPath:indexPath];
     LogListModel *model = _dataSource[indexPath.row];
     [cell mRefreshBlogCell:model type:_navTitle ? EKBlogCellTypeWithMyBlog : EKBlogCellTypeWithNormalBlog];
     return cell;

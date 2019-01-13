@@ -1,7 +1,7 @@
 /**
  -  SaveUser.h
  -  BKSDK
- -  Created by HY on 16/11/24.
+ -  Created by ligb on 16/11/24.
  -  Copyright © 2016年 BaByKingdom. All rights reserved.
  -  使用NSKeyedArchiver存储方式，本地存取user对象
  

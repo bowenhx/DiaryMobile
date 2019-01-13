@@ -1,7 +1,7 @@
 /**
  -  SaveData.h
  -  BKSDK
- -  Created by HY on 16/11/22.
+ -  Created by ligb on 16/11/22.
  -  Copyright © 2016年 HY. All rights reserved.
  -  使用NSUserDefaults本地存取NSString，NSUInteger，BOOL，NSArray，NSDictionary。
  -  使用writeToFile方法，对NSArray，NSDictionary，NSData进行文件读写操作。
