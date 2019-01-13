@@ -66,6 +66,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
 }
+
 - (UIScrollView *)scrollView{
     if (!_scrollView) {
         _scrollView = [[UIScrollView alloc] init];

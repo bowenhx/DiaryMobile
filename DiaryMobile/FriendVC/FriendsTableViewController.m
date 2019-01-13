@@ -37,6 +37,12 @@ static NSString *kBLOG_CELL = @"DiaryListViewCell";
     [self loadNewView];
 }
 
+- (void)setParames:(id)parames {
+    NSString *str = parames[@"title"];
+    _navTitle = str;
+    self.navigationItem.title = str;
+}
+
 - (void)loadNewView {
     _dataSource = [NSMutableArray array];
     _tempData = [NSMutableArray array];

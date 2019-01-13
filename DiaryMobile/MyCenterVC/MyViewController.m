@@ -7,7 +7,7 @@
 //
 
 #import "MyViewController.h"
-#import "FriendsTableViewController.h"
+
 
 @interface MyViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -35,7 +35,7 @@
 }
 
 - (UIView *)userHeadView {
-    UIView *iView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, 150)];
+    UIView *iView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, 180)];
     iView.backgroundColor = kViewNormalBackColor.color;
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake((kSCREEN_WIDTH - 65) / 2, 30, 65, 65)];
     imageView.image = [UIImage imageNamed:@"author_avatar"];
@@ -89,9 +89,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.row == 0) {
-        FriendsTableViewController *friendVC = [[FriendsTableViewController alloc] init];
-        friendVC.navTitle = @"我的日記";
-        [self.navigationController pushViewController:friendVC animated:YES];
+        [self showNextControllerName:@"FriendsTableViewController" params:@{@"title":@"我的日記"} isPush:YES];
     } else {
         
     }
