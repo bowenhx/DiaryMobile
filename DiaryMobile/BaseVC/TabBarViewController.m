@@ -47,8 +47,16 @@
         [item setSelectedImage:select];
         [item setImageInsets:UIEdgeInsetsMake(-2.5, 0, 2.5, 0)];
     }
+    
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationWithTabbarChangeSelectIndex:) name:kNotificationForTabbarChangeSelectIndex object:nil];
 }
 
 
-
+- (void)notificationWithTabbarChangeSelectIndex:(NSNotification *)notification {
+    NSInteger nowIndex = [notification.object integerValue];
+    dispatch_time_t waitTime = dispatch_time(DISPATCH_TIME_NOW, 0.0 * NSEC_PER_SEC);
+    dispatch_after(waitTime, dispatch_get_main_queue(), ^(void){
+        self.selectedIndex = nowIndex;
+    });
+}
 @end

@@ -11,6 +11,7 @@
 #import "DiaryListViewCell.h"
 #import "LogListModel.h"
 #import "WebViewController.h"
+#import "LoginViewController.h"
 
 static NSString *kBLOG_CELL = @"DiaryListViewCell";
 
@@ -26,6 +27,8 @@ static NSString *kBLOG_CELL = @"DiaryListViewCell";
 
 //Yes代表下拉刷新，No代表上啦加载更多
 @property (nonatomic , assign) BOOL isPullRefresh;
+
+@property (nonatomic, strong) UIView *backView;
 @end
 
 @implementation FriendsTableViewController
@@ -43,6 +46,50 @@ static NSString *kBLOG_CELL = @"DiaryListViewCell";
     self.navigationItem.title = str;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (LOGINSTATUS) {
+        _backView.hidden = YES;
+        self.tableView.scrollEnabled = YES;
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        if (!self.dataSource.count) {
+            [self.tableView.mj_header beginRefreshing];
+        }
+    } else {
+        _backView.hidden = NO;
+        self.tableView.scrollEnabled = NO;
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        if ([self.view viewWithTag:1000]) {
+            NSLog(@"不處理");
+        } else {
+            [self.view addSubview:self.backView];
+        }
+    }
+}
+
+- (UIView *)backView {
+    if (!_backView) {
+        _backView = [[UIView alloc] initWithFrame:self.view.bounds];
+        _backView.tag = 1000;
+        _backView.w = kSCREEN_WIDTH;
+        _backView.backgroundColor = kViewNormalBackColor.color;
+        UILabel *labText = [[UILabel alloc] initWithFrame:CGRectMake(20, kSCREEN_HEIGHT / 2 - 100, kSCREEN_WIDTH - 40, 50)];
+        labText.text = @"點擊登錄";
+        labText.font = [UIFont systemFontOfSize:20];
+        labText.textAlignment = NSTextAlignmentCenter;
+        labText.textColor = [UIColor darkGrayColor];
+        
+        [_backView addSubview:labText];
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        btn.frame = _backView.bounds;
+        btn.backgroundColor = [UIColor clearColor];
+        [_backView addSubview:btn];
+        [btn addTarget:self action:@selector(showLoginAction) forControlEvents:UIControlEventTouchUpInside];
+    }
+    
+    return _backView;
+}
+
 - (void)loadNewView {
     _dataSource = [NSMutableArray array];
     _tempData = [NSMutableArray array];
@@ -53,13 +100,17 @@ static NSString *kBLOG_CELL = @"DiaryListViewCell";
     MJRefreshGifHeader* gifHeader = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(pullLoadAction)];
     gifHeader.lastUpdatedTimeLabel.hidden = YES;
     self.tableView.mj_header = gifHeader;
-    [self.tableView.mj_header beginRefreshing];
+    
     
     //添加上拉加载更多功能
     MJRefreshBackGifFooter* gifFooter = [MJRefreshBackGifFooter footerWithRefreshingTarget:self refreshingAction:@selector(uploadingAction)];
     self.tableView.mj_footer = gifFooter;
     self.tableView.mj_footer.hidden = YES;
 
+}
+
+- (void)showLoginAction {
+    [LoginViewController initWithLoginVC:self from:@"Friends"];
 }
 
 
