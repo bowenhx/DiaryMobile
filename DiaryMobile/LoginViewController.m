@@ -49,7 +49,18 @@
     [super viewDidLoad];
     [super backBtn];
     self.navigationItem.title = @"登錄";
+    _loginBtn.layer.cornerRadius = 3;
+    _loginBtn.layer.masksToBounds = YES;
     
+    CALayer *line1 = [[CALayer alloc] init];
+    line1.frame = CGRectMake(_userName.x, _userName.max_Y+1, kSCREEN_WIDTH - _userName.x - 40, 0.5);
+    line1.backgroundColor = [UIColor lightGrayColor].CGColor;
+    [self.view.layer addSublayer:line1];
+    
+    CALayer *line2 = [[CALayer alloc] init];
+    line2.frame = CGRectMake(_password.x, _password.max_Y, kSCREEN_WIDTH - _password.x - 40, 0.5);
+    line2.backgroundColor = [UIColor lightGrayColor].CGColor;
+    [self.view.layer addSublayer:line2];
 }
 
 - (IBAction)goWithLoginAction:(id)sender {
