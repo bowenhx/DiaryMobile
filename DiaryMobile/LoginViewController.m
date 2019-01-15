@@ -64,14 +64,66 @@
 }
 
 - (IBAction)goWithLoginAction:(id)sender {
-    
-    
+    if ([@"" isStringBlank:_userName.text]) {
+        [self.view showHUDTitleView:@"用戶名不能為空" image:nil];
+        return;
+    } else if ([@"" isStringBlank:_password.text]){
+        [self.view showHUDTitleView:@"密碼不能為空" image:nil];
+        return;
+    }
+    [self sendUserInfoAction];
 }
 
+- (void)sendUserInfoAction {
+    NSString *uname = [BKTool stringByUrlEncoding:_userName.text];
+    NSString *password = [BKTool stringByUrlEncoding:_password.text];
+    [self.view showHUDActivityView:@"正在加載..." shade:YES];
+    NSDictionary *parameter = @{@"username":uname,@"password":password,@"deviceID":@""};
+    [BaseNetworking mHttpWithUrl:kLoginLogin parameter:parameter response:^(BKNetworkModel *model, NSString *netErr) {
+        [self.view removeHUDActivity];
+        if (netErr) {
+            [self.view showHUDTitleView:netErr image:nil];
+        }else{
+            if (model.status == 1) {
+                //保存用户对象
+                User * user = [[User alloc] init];
+                [user setValuesForKeysWithDictionary:model.data];
+                [SaveUser mSaveUser:user];
+                
+                [self didTouchBackAction];
+                
+                
+                //发送登录成功的通知
+//                [[NSNotificationCenter defaultCenter] postNotificationName:kLoginSuccessNotification object:nil];
+                
+                //登录成功后，通知讨论区，刷新页面，根据账号来改变板块
+//                [[NSNotificationCenter defaultCenter] postNotificationName:kLoginWithRefreshForumNotification object:nil];
+             
+                NSString *message = model.message;
+                [[CustomAlertController alertController].message(message).alertStyle(alert).confirmTitle(@"確定").controller(self) show:nil confirmAction:^(UIAlertAction *action) {
+                     [self dismissViewControllerAnimated:YES completion:nil];
+                } cancelAction:nil];
+            } else {
+                [self.view showHUDTitleView:model.message image:nil];
+            }
+        }
+    }];
+}
 
+//登录成功后，保存用户信息
+- (void)didTouchBackAction {
+    //登录成功后进入页面
+    if (_from && [_from isEqualToString:@"inPage"]) {
+        [self tapBackBtn];
+    } else {
+       
+    }
+}
 
 - (void)tapBackBtn {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+
 
 @end

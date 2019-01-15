@@ -26,17 +26,23 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mo5-dx-4zN">
                     <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sze-vL-K8E">
-                            <rect key="frame" x="64" y="176" width="271" height="17"/>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="賬號" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sze-vL-K8E">
+                            <rect key="frame" x="64" y="169.5" width="271" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="rZy-QO-kOp"/>
+                            </constraints>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mfK-bI-TXr">
-                            <rect key="frame" x="64" y="226.5" width="271" height="17"/>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mfK-bI-TXr">
+                            <rect key="frame" x="64" y="220" width="271" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="CBC-yQ-g45"/>
+                            </constraints>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_icon_user" translatesAutoresizingMaskIntoConstraints="NO" id="eDK-9N-gRp">
                             <rect key="frame" x="40" y="172" width="14" height="25"/>
@@ -48,7 +54,7 @@
                             <rect key="frame" x="40" y="227" width="14" height="16"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3H-uK-fQ4">
-                            <rect key="frame" x="40" y="328.5" width="295" height="44"/>
+                            <rect key="frame" x="40" y="335" width="295" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="NsY-og-wyu"/>
                             </constraints>

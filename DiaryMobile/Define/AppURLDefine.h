@@ -46,6 +46,14 @@ static NSString *const kGreeting   =  @"?mod=home&op=poke";
 static NSString *const kPhotoGallery = @"?mod=home&op=album";
 
 
+//用户登录api
+static NSString *const kLoginLogin = @"?mod=member&op=login";
+
+//用户推出登录api
+static NSString *const kLoginLoginOut = @"?mod=member&op=logout";
+
+
+static NSString *const kDiaryAbout = @"https://iphone2.baby-kingdom.com/about.php";
 
 
 //保存日志分类对象key
