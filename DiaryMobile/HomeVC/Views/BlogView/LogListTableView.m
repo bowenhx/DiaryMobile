@@ -290,7 +290,7 @@ static NSString *BLOG_CELL = @"DiaryListViewCell";
    
 }
 
-- (void)selectUserInfo:(UIButton *)btn{
+- (void)selectUserInfo:(UIButton *)btn {
     LogListModel *model = [_dataSource objectAtIndex:btn.tag];
     if (model.uid == [USERID integerValue]) {
         //点击用户自己，不可以查看资料

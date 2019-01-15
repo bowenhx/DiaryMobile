@@ -43,7 +43,7 @@
                             <constraint firstAttribute="width" constant="44" id="TMd-8E-o1Q"/>
                             <constraint firstAttribute="height" constant="33" id="xtg-Av-u3u"/>
                         </constraints>
-                        <state key="normal" image="my_friend_unpressed">
+                        <state key="normal" image="My_friend_unpressed">
                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                         <state key="selected" image="my_friend_pressed"/>
@@ -76,7 +76,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="My_friend_unpressed" width="51" height="38"/>
         <image name="my_friend_pressed" width="40" height="25"/>
-        <image name="my_friend_unpressed" width="40" height="25"/>
     </resources>
 </document>
