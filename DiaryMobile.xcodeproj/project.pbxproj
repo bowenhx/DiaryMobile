@@ -72,8 +72,8 @@
 		9172C65721E62F1A00303BE3 /* UserGroups.m in Sources */ = {isa = PBXBuildFile; fileRef = 9172C65421E62F1A00303BE3 /* UserGroups.m */; };
 		9172C65B21E62F7A00303BE3 /* BKTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9172C65A21E62F7A00303BE3 /* BKTool.m */; };
 		917CBDA521EA120F00CB0A6D /* UIViewController+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 917CBDA421EA120F00CB0A6D /* UIViewController+Utilities.m */; };
-		91CC72BE21E9EA8A00EC8393 /* FriendListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91CC72BB21E9EA8900EC8393 /* FriendListCell.m */; };
-		91CC72BF21E9EA8A00EC8393 /* FriendListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91CC72BD21E9EA8A00EC8393 /* FriendListCell.xib */; };
+		91CC72BE21E9EA8A00EC8393 /* FriendListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91CC72BB21E9EA8900EC8393 /* FriendListViewCell.m */; };
+		91CC72BF21E9EA8A00EC8393 /* FriendListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91CC72BD21E9EA8A00EC8393 /* FriendListViewCell.xib */; };
 		91CC72C321E9EB9C00EC8393 /* FriendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91CC72C221E9EB9C00EC8393 /* FriendModel.m */; };
 		91CC72C721E9F02F00EC8393 /* UserHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 91CC72C621E9F02F00EC8393 /* UserHelper.m */; };
 		9204768421EC71D200B23655 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9204768321EC71D200B23655 /* LoginViewController.xib */; };
@@ -289,9 +289,9 @@
 		9172C65A21E62F7A00303BE3 /* BKTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKTool.m; sourceTree = "<group>"; };
 		917CBDA321EA11CC00CB0A6D /* UIViewController+Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Utilities.h"; sourceTree = "<group>"; };
 		917CBDA421EA120F00CB0A6D /* UIViewController+Utilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Utilities.m"; sourceTree = "<group>"; };
-		91CC72BB21E9EA8900EC8393 /* FriendListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendListCell.m; sourceTree = "<group>"; };
-		91CC72BC21E9EA8A00EC8393 /* FriendListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendListCell.h; sourceTree = "<group>"; };
-		91CC72BD21E9EA8A00EC8393 /* FriendListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendListCell.xib; sourceTree = "<group>"; };
+		91CC72BB21E9EA8900EC8393 /* FriendListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendListViewCell.m; sourceTree = "<group>"; };
+		91CC72BC21E9EA8A00EC8393 /* FriendListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendListViewCell.h; sourceTree = "<group>"; };
+		91CC72BD21E9EA8A00EC8393 /* FriendListViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendListViewCell.xib; sourceTree = "<group>"; };
 		91CC72C121E9EB9B00EC8393 /* FriendModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendModel.h; sourceTree = "<group>"; };
 		91CC72C221E9EB9C00EC8393 /* FriendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendModel.m; sourceTree = "<group>"; };
 		91CC72C521E9F02F00EC8393 /* UserHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserHelper.h; sourceTree = "<group>"; };
@@ -809,9 +809,9 @@
 		929A188C21E89804007FE304 /* VIews */ = {
 			isa = PBXGroup;
 			children = (
-				91CC72BC21E9EA8A00EC8393 /* FriendListCell.h */,
-				91CC72BB21E9EA8900EC8393 /* FriendListCell.m */,
-				91CC72BD21E9EA8A00EC8393 /* FriendListCell.xib */,
+				91CC72BC21E9EA8A00EC8393 /* FriendListViewCell.h */,
+				91CC72BB21E9EA8900EC8393 /* FriendListViewCell.m */,
+				91CC72BD21E9EA8A00EC8393 /* FriendListViewCell.xib */,
 				929A188F21E89843007FE304 /* BlogSettingTableViewCell.h */,
 				929A188E21E89843007FE304 /* BlogSettingTableViewCell.m */,
 				929A188D21E89843007FE304 /* BlogSettingTableViewCell.xib */,
@@ -1234,7 +1234,7 @@
 				92FF92E421E6EFF4001EBFF6 /* WebViewController.xib in Resources */,
 				929A188321E88B8A007FE304 /* BlogTypeTableViewController.xib in Resources */,
 				9172C60B21E6276D00303BE3 /* MBProgressHUD.bundle in Resources */,
-				91CC72BF21E9EA8A00EC8393 /* FriendListCell.xib in Resources */,
+				91CC72BF21E9EA8A00EC8393 /* FriendListViewCell.xib in Resources */,
 				9172C5FE21E6276400303BE3 /* MJRefresh.bundle in Resources */,
 				9204768421EC71D200B23655 /* LoginViewController.xib in Resources */,
 				929A189021E89843007FE304 /* BlogSettingTableViewCell.xib in Resources */,
@@ -1256,7 +1256,7 @@
 				92FF929E21E6DD1E001EBFF6 /* DACircularProgressView.m in Sources */,
 				92FF92E321E6EFF4001EBFF6 /* WebViewController.m in Sources */,
 				9172C65721E62F1A00303BE3 /* UserGroups.m in Sources */,
-				91CC72BE21E9EA8A00EC8393 /* FriendListCell.m in Sources */,
+				91CC72BE21E9EA8A00EC8393 /* FriendListViewCell.m in Sources */,
 				92FF92C921E6E877001EBFF6 /* UIImageView+PlayGIF.m in Sources */,
 				9172C5B821E6275700303BE3 /* SDWebImagePrefetcher.m in Sources */,
 				92FF92B321E6DD1E001EBFF6 /* ZLPhotoPickerAssetsViewController.m in Sources */,

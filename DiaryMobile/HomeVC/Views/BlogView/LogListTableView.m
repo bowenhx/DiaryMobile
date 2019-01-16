@@ -23,7 +23,6 @@ static NSString *BLOG_CELL = @"DiaryListViewCell";
 
 @property (nonatomic , strong) NSMutableArray *dataSource;
 @property (nonatomic , strong) NSMutableArray <LogListModel *>* tempData;
-@property (nonatomic , assign) BOOL isFirst;//记录是否是首次进入页面
 @property (nonatomic , strong) NSMutableArray <NSMutableArray *> *vDataSource;
 @end;
 //  @[@[@"",@[6]],
@@ -143,13 +142,6 @@ static NSString *BLOG_CELL = @"DiaryListViewCell";
 //            vc.segmentedControl.userInteractionEnabled = NO;
 //        }
         
-        if (_isFirst) {
-            //添加googel 统计
-            [self mAddGoogleStatisticsAction];
-        } else {
-            _isFirst = YES;
-        }
-        
         [self showHUDActivityView:@"正在加載..." shade:NO];
         NSString *iCatid = string(_itemCatid.catid);
         [LogListModel loadBlogListType:iCatid order:_order page:_page block:^(NSArray *data, LogListPage *page, NSString *netErr) {
@@ -188,10 +180,6 @@ static NSString *BLOG_CELL = @"DiaryListViewCell";
         }];
         
     } else if (_blogListAll == BlogList_My) {
-        if (_tempData.count) {
-            //添加googel 统计
-            [self mAddGoogleStatisticsAction];
-        }
         [self showHUDActivityView:@"正在加載..." shade:NO];
         [LogListModel loadMyBlogListData:_page block:^(NSArray *data, LogListPage *page, NSString *netErr) {
             [self removeHUDActivity];
@@ -317,17 +305,6 @@ static NSString *BLOG_CELL = @"DiaryListViewCell";
     if (_dataSource.count > 1) {
         [_tabView scrollToBottomWithAnimated:YES];
     }
-}
-
-//添加google 统计
-- (void)mAddGoogleStatisticsAction {
-//    if ([self.order isEqualToString:ORDER_DATELINE]) {
-//        [BKGoogleStatistics mGoogleScreenAnalytics:kNewBlogIndex];
-//    } else if ([self.order isEqualToString:ORDER_HOT]) {
-//        [BKGoogleStatistics mGoogleScreenAnalytics:kRecommendBlogIndex];
-//    } else {
-//        [BKGoogleStatistics mGoogleScreenAnalytics:kMyBlogIndex];
-//    }
 }
 
 @end

@@ -1,14 +1,14 @@
 //
-//  FriendListCell.m
+//  FriendListViewCell.m
 //  BKMobile
 //
 //  Created by 薇 颜 on 15/8/29.
 //  Copyright (c) 2015年 com.mobile-kingdom.bkapps. All rights reserved.
 //
 
-#import "FriendListCell.h"
+#import "FriendListViewCell.h"
 
-@implementation FriendListCell
+@implementation FriendListViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

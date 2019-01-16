@@ -7,11 +7,11 @@
 //
 
 #import "FriendListViewController.h"
-#import "FriendListCell.h"
+#import "FriendListViewCell.h"
 //#import "UserInformationViewController.h"
 #import "FriendModel.h"
 
-@interface FriendListViewController ()<UITableViewDataSource, UITableViewDelegate, FriendListCellDelegate>
+@interface FriendListViewController ()<UITableViewDataSource, UITableViewDelegate, FriendListViewCellDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *friendList;
@@ -44,7 +44,7 @@
             make.top.equalTo(self.view).offset(kNAV_BAR_HEIGHT);
         }];
         _tableView.tableFooterView = [[UIView alloc] init];
-        [_tableView registerNib:[UINib nibWithNibName:@"FriendListCell" bundle:nil] forCellReuseIdentifier:@"FriendListCell"];
+        [_tableView registerNib:[UINib nibWithNibName:@"FriendListViewCell" bundle:nil] forCellReuseIdentifier:@"FriendListViewCell"];
     }
     __weak typeof(self)bself = self;
     //添加下拉刷新功能
@@ -123,8 +123,8 @@
     return 1;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *cellIdentifier = @"FriendListCell";
-    FriendListCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    static NSString *cellIdentifier = @"FriendListViewCell";
+    FriendListViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
     FriendModel *model = [_friendList objectAtIndex:indexPath.row];
@@ -155,7 +155,7 @@
 //        userInfoVC.name = model.username;
 //        [self.navigationController pushViewController:userInfoVC animated:YES];
     }else if (_friendType == FriendList_Select){
-        FriendListCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        FriendListViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         
         __block NSUInteger index = 9999999;
         [_selectFriends enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -177,7 +177,7 @@
     }
     
 }
-#pragma mark - FriendListCellDelegate
+#pragma mark - FriendListViewCellDelegate
 - (void)friendListCellDeleteButtonClick:(NSIndexPath *)indexPath{
     CustomAlertController *alertVC = [CustomAlertController alertController];
     alertVC.message(@"是否解除好友關係？").cancelTitle(@"取消").confirmTitle(@"確定").alertStyle(alert).controller(self);

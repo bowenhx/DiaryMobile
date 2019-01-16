@@ -87,18 +87,20 @@
                 [self addAlertViewAction];
             }else{
                 //验证密码请求
-                [self verifyPasswordAction:pw showActivity:@"正在驗證..."];
+                [self beginVerifyPasswordAction:pw showActivity:@"正在驗證..."];
             }
-        }else{
+        } else {
             //弹出密码输入框
             [self addAlertViewAction];
         }
     }else{
         //验证密码请求
-        [self verifyPasswordAction:@"" showActivity:@"正在獲取鏈接"];
+        [self beginVerifyPasswordAction:@"" showActivity:@"正在獲取鏈接"];
     }
 }
-- (void)verifyPasswordAction:(NSString *)pw showActivity:(NSString *)text
+
+
+- (void)beginVerifyPasswordAction:(NSString *)pw showActivity:(NSString *)text
 {
      [self.view showHUDActivityView:text shade:NO];
     __weak typeof(self) bself = self;
@@ -130,9 +132,7 @@
     
 }
 
-- (void)tapRightBtn{
-
-
+- (void)tapRightBtn {
 }
 
 
@@ -193,9 +193,6 @@
         }
        
     }
-    
-    
-    
 }
 
 /**
@@ -224,7 +221,7 @@
             [self addAlertViewAction];
         } else {
             //去验证密码是否正确
-            [self verifyPasswordAction:textField.text showActivity:@"正在驗證..."];
+            [self beginVerifyPasswordAction:textField.text showActivity:@"正在驗證..."];
         }
     } cancelAction:^(UIAlertAction *action, NSArray<UITextField *> *textFields) {
         [self tapBackBtn];

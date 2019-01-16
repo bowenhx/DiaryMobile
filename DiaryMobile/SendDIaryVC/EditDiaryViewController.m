@@ -107,6 +107,7 @@ static CGFloat kTableTopSpace = 40;
     }
     return _typeNames;
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = NO;
@@ -120,12 +121,12 @@ static CGFloat kTableTopSpace = 40;
 }
 
 
-- (void)loadNewView{
+- (void)loadNewView {
     lineLabel.backgroundColor = [UIColor groupTableViewBackgroundColor];
     _tableViewConstraintY.constant = self.photoBtn.h + kTableTopSpace;
 }
-- (void)loadNewData{
-   
+
+- (void)loadNewData {
     _listData = @[@"站點分類",@"隱私設置"];
     [_tableView reloadData];
 }
@@ -148,17 +149,10 @@ static CGFloat kTableTopSpace = 40;
                               @"friend":@(_tempTypeSetIndex),
                               @"target_names":target_names,
                               @"password":_password};
-    
-    DLog(@"dicInfo = %@",dicInfo);
-    
-    
     __weak typeof(self) bself = self;
-    
     [self showActivityView:@"0%"];
-
     MBProgressHUD *HUDpro = (MBProgressHUD *)[self.view viewWithTag:0xffff];
     NSArray *files = [self uploadingImageFiles:self.vAssets];
-    
     [[BKNetworking share] upload:kSendBlog params:dicInfo files:files precent:^(float precent) {
         NSString *progressStr = [NSString stringWithFormat:@"%.1f", precent * 100];
         progressStr = [progressStr stringByAppendingString:@"%"];

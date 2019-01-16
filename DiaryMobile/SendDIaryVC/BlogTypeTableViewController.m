@@ -23,8 +23,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
 }
 
 - (void)loadNewView{
@@ -34,7 +32,8 @@
     [_tableView registerNib:[UINib nibWithNibName:@"BlogSettingTableViewCell" bundle:nil] forCellReuseIdentifier:@"blogSettingTableViewCell"];
     [_tableView setTableFooterView:[[UIView alloc] init]];
 }
-- (void)loadNewData{
+
+- (void)loadNewData {
     if (_blogSetting == EditBlogSetting_Type) {
         NSString *path = [BKTool getLibraryDirectoryPath:kBlogTypeKey];
         if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
@@ -43,14 +42,14 @@
             _itemArray = [[NSMutableArray alloc] initWithArray:arr];
             [self.tableView reloadData];
         }
-    }else if (_blogSetting == EditBlogSetting_Intimity) {
+    } else if (_blogSetting == EditBlogSetting_Intimity) {
         //隐私设置页面
         _itemArray = [[NSMutableArray alloc] initWithObjects:@"全站用戶可見",@"僅好友可見",@"指定好友可見",@"僅自己可見",@"憑密碼可見", nil];
         [self.tableView reloadData];
     }
-
 }
-- (void)tapRightBtn{
+
+- (void)tapRightBtn {
     NSLog(@"_selectIndex = %ld",_selectIndex);
    if (_blogSetting == EditBlogSetting_Type){
        BlogTypeList *typeModel = _itemArray[_selectIndex];
@@ -110,6 +109,7 @@
     [self cellForRowSurplusTableViewCell:cell indexPath:indexPath];
     return cell;
 }
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
@@ -134,7 +134,7 @@
             
         } else if (indexPath.row == 4) {
             //凭密码可见
-            [self addAlertViewAction];
+            [self mAddAlertViewAction];
         }else{
             _selectIndex = indexPath.row;
             [_tableView reloadData];
@@ -171,7 +171,7 @@
 }
 
 #pragma mark UIAlertView
-- (void)addAlertViewAction
+- (void)mAddAlertViewAction
 {
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"設置密碼" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"確定", nil];
     /**
@@ -184,15 +184,16 @@
     textField.textAlignment = NSTextAlignmentCenter;
     textField.borderStyle = UITextBorderStyleNone;
 }
+
 #pragma mark allertViewDelegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex == 0){
-    }else{
+    if (buttonIndex == 0) {
+    } else {
         UITextField *textField = [alertView textFieldAtIndex:0];
         if ([@"" isStringBlank:textField.text]) {
             [self.view showHUDTitleView:@"請输入有效密码" image:nil];
-            [self addAlertViewAction];
+            [self mAddAlertViewAction];
         }else{
             //完成
             _password = textField.text;
@@ -202,8 +203,5 @@
     }
     
 }
-
-
-
 
 @end
