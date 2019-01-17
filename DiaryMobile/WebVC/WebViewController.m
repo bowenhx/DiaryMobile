@@ -207,8 +207,7 @@
 //    NSLog(@"%s", __FUNCTION__);
 }
 
-- (void)addAlertViewAction
-{
+- (void)addAlertViewAction {
     CustomAlertController *customAlert = [[CustomAlertController alloc] init];
     customAlert.message(@"加密日誌，請輸入密碼").tfPlaceholders(@[@"請輸入密碼"]).confirmTitle(@"確定").cancelTitle(@"取消").controller(self).alertStyle(alert);
     [customAlert showTextField:^(UITextField *textField) {

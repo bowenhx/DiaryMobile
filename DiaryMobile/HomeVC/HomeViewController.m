@@ -10,6 +10,7 @@
 #import "LogListModel.h"
 #import "CustomScrollerHeadView.h"
 #import "LogListTableView.h"
+#import "LoginViewController.h"
 
 #define SELECTPAGE_VIEW_HEIGHT 45   //选择页数弹出的自定义view高度
 //当order = dateline 时，获取的是最新发布日志列表
@@ -166,7 +167,9 @@
 }
 
 - (void)editBlogAction {
-    [super showNextControllerName:@"EditDiaryViewController" params:nil isPush:YES];
+    if (![LoginViewController initWithLoginVC:self from:@"Friends"]) {
+        [super showNextControllerName:@"EditDiaryViewController" params:nil isPush:YES];
+    }
 }
 
 

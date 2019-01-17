@@ -65,7 +65,7 @@
     }
 }
 
-- (void)tapRightBtn{
+- (void)tapRightBtn {
     NSLog(@"_selectFriends = %@",_selectFriends);
     
     NSMutableArray *items = [NSMutableArray arrayWithCapacity:_selectFriends.count];
