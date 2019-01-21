@@ -69,11 +69,11 @@ static CGFloat kTableTopSpace = 40;
         if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
             NSData *saveData = [NSData dataWithContentsOfFile:path];
             NSArray *arr = [NSKeyedUnarchiver unarchiveObjectWithData:saveData];
-            BlogTypeList *listObj = arr[0];
+            DiaryTypeModel *listObj = arr[0];
             _catid = listObj.catid;
             _typeNames = [[NSMutableArray alloc] initWithObjects:listObj.catname,@"全站用戶可見", nil];
         }else{
-            [BlogTypeList getBlogTypeListBlock:^(NSArray *data, NSString *netErr) {
+            [DiaryTypeModel getBlogTypeListBlock:^(NSArray *data, NSString *netErr) {
                 if (netErr) {
                     [self.view showHUDTitleView:netErr image:nil];
                 }else{
@@ -81,7 +81,7 @@ static CGFloat kTableTopSpace = 40;
                         return;
                     }
                     
-                    BlogTypeList *listObj = data[0];
+                    DiaryTypeModel *listObj = data[0];
                     _catid = listObj.catid;
                     if (!_typeNames) {
                         _typeNames = [NSMutableArray array];
@@ -495,12 +495,72 @@ static CGFloat kTableTopSpace = 40;
 //    cell.detailTextLabel.text = listObj ? listObj.catname : @"";
     
 }
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //点击单元格时候，缩回键盘
     [self mKeyboardHidden];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (indexPath.row == 0) {
+        NSString *path = [BKTool getLibraryDirectoryPath:kBlogTypeKey];
+        __block NSMutableArray *actions = [NSMutableArray array];
+        __block NSMutableArray <DiaryTypeModel *> *arr = [NSMutableArray array];
+        if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
+            NSData *saveData = [NSData dataWithContentsOfFile:path];
+            arr = [NSKeyedUnarchiver unarchiveObjectWithData:saveData];
+            [arr enumerateObjectsUsingBlock:^(DiaryTypeModel *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                [actions addObject:obj.catname];
+            }];
+        }
+        
+        CustomAlertController *alert = [CustomAlertController alertController];
+        alert.title(@"選擇分類").actions(actions).cancelTitle(@"取消").controller(self);
+        
+        [alert show:^(UIAlertAction *action, NSInteger index) {
+            [_typeNames replaceObjectAtIndex:0 withObject:action.title];
+            _tempTypeIndex = index;//标记设置页面
+            _catid = arr[index].catid;
+            [_tableView reloadData];
+            NSLog(@"action.title = %@",action.title);
+        } confirmAction:nil cancelAction:nil];
+        
+     
+    } else {
+        BlogTypeTableViewController *blogTypeVC = [[BlogTypeTableViewController alloc] initWithNibName:@"BlogTypeTableViewController" bundle:nil];
+        blogTypeVC.title = _listData[indexPath.row];
+        blogTypeVC.blogSetting = indexPath.row;
+        //记录选中的index
+        blogTypeVC.selectIndex = indexPath.row == 0 ? _tempTypeIndex : _tempTypeSetIndex;
+        [self.navigationController pushViewController:blogTypeVC animated:YES];
+        
+        blogTypeVC.typeObj = ^(DiaryTypeModel *obj,NSString *setName,NSUInteger index){
+            if (indexPath.row == 0) {//分类
+                [_typeNames replaceObjectAtIndex:0 withObject:setName];
+                _tempTypeIndex = index;//标记设置页面
+                _catid = obj.catid;
+            } else {//隐私设置
+                [_typeNames replaceObjectAtIndex:1 withObject:setName];
+                _tempTypeSetIndex = index;//标记设置页面
+            }
+            [_tableView reloadData];
+        };
+        
+        blogTypeVC.freendsPw = ^(NSArray *usernames,NSString *password){
+            if (usernames.count) {
+                //好友名字
+                _usernames = [usernames copy];
+            }else{
+                //密码设置
+                _password = password;
+            }
+        };
+        
+    }
+    
+    
+    
+    
+    return;
     BlogTypeTableViewController *blogTypeVC = [[BlogTypeTableViewController alloc] initWithNibName:@"BlogTypeTableViewController" bundle:nil];
     blogTypeVC.title = _listData[indexPath.row];
     blogTypeVC.blogSetting = indexPath.row;
@@ -508,11 +568,13 @@ static CGFloat kTableTopSpace = 40;
     blogTypeVC.selectIndex = indexPath.row == 0 ? _tempTypeIndex : _tempTypeSetIndex;
     [self.navigationController pushViewController:blogTypeVC animated:YES];
     
-    blogTypeVC.typeObj = ^(BlogTypeList *obj,NSString *setName,NSUInteger index){
+    blogTypeVC.typeObj = ^(DiaryTypeModel *obj,NSString *setName,NSUInteger index){
         if (indexPath.row == 0) {//分类
             [_typeNames replaceObjectAtIndex:0 withObject:setName];
             _tempTypeIndex = index;//标记设置页面
             _catid = obj.catid;
+           
+            
         }else{//隐私设置
             [_typeNames replaceObjectAtIndex:1 withObject:setName];
             _tempTypeSetIndex = index;//标记设置页面

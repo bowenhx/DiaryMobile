@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "KDefine.h"
+#import "DiaryTypeModel.h"
 
 
 @class LogListPage;
@@ -58,10 +59,10 @@ typedef void (^BlogTypeBlock)(NSArray *data , NSString *netErr);
 
 
 //日志分类数据
-@interface BlogTypeList : NSObject <NSCoding>
-@property (nonatomic , assign) NSInteger catid;
-@property (nonatomic , copy) NSString *catname;
-
-+ (void)getBlogTypeListBlock:(BlogTypeBlock)block;
-
-@end
+//@interface BlogTypeList : NSObject <NSCoding>
+//@property (nonatomic , assign) NSInteger catid;
+//@property (nonatomic , copy) NSString *catname;
+//
+//+ (void)getBlogTypeListBlock:(BlogTypeBlock)block;
+//
+//@end

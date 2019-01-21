@@ -116,9 +116,10 @@
     [data enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         LogListModel *logList = [LogListModel new];
         [logList setValuesForKeysWithDictionary:obj];
-        [dataList addObject:logList];
+        if (![logList.subject isEqualToString:@"培道、迦南點揀"]) {
+            [dataList addObject:logList];
+        }
     }];
-    
     return dataList;
 }
 
@@ -155,6 +156,7 @@
 
 @end
 
+/*
 @implementation BlogTypeList
 
 + (void)getBlogTypeListBlock:(BlogTypeBlock)block{
@@ -224,4 +226,4 @@
 
 @end
 
-
+*/

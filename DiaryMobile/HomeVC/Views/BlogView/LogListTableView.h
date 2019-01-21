@@ -28,7 +28,7 @@ typedef void (^BlogListPageBlock)(LogListPage * page);
 
 @property (nonatomic , strong) UITableView *tabView;
 //绑定分类catid 对象
-@property (nonatomic , strong ) BlogTypeList *itemCatid;
+@property (nonatomic , strong ) DiaryTypeModel *itemCatid;
 //绑定导航条大分类order
 @property (nonatomic , copy)NSString *order;
 

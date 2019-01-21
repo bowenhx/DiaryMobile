@@ -102,6 +102,7 @@
 		92A31F4921E5E1AE002659E5 /* UIColor+app.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A31F4721E5E1AE002659E5 /* UIColor+app.m */; };
 		92A31F4A21E5E1AE002659E5 /* NSString+UIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A31F4821E5E1AE002659E5 /* NSString+UIColor.m */; };
 		92A31F4F21E5EBD8002659E5 /* DiaryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A31F4E21E5EBD8002659E5 /* DiaryListViewController.m */; };
+		92BFE7FE21F17DA200C38AEF /* DiaryTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BFE7FD21F17DA200C38AEF /* DiaryTypeModel.m */; };
 		92FF929D21E6DD1E001EBFF6 /* DALabeledCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FF925221E6DD1E001EBFF6 /* DALabeledCircularProgressView.m */; };
 		92FF929E21E6DD1E001EBFF6 /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FF925321E6DD1E001EBFF6 /* DACircularProgressView.m */; };
 		92FF929F21E6DD1E001EBFF6 /* ZLCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FF925821E6DD1E001EBFF6 /* ZLCameraViewController.m */; };
@@ -345,6 +346,8 @@
 		92A31F4B21E5E8E5002659E5 /* KDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KDefine.h; sourceTree = "<group>"; };
 		92A31F4D21E5EBD8002659E5 /* DiaryListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiaryListViewController.h; sourceTree = "<group>"; };
 		92A31F4E21E5EBD8002659E5 /* DiaryListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiaryListViewController.m; sourceTree = "<group>"; };
+		92BFE7FC21F17DA200C38AEF /* DiaryTypeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiaryTypeModel.h; sourceTree = "<group>"; };
+		92BFE7FD21F17DA200C38AEF /* DiaryTypeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiaryTypeModel.m; sourceTree = "<group>"; };
 		92FF925221E6DD1E001EBFF6 /* DALabeledCircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DALabeledCircularProgressView.m; sourceTree = "<group>"; };
 		92FF925321E6DD1E001EBFF6 /* DACircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACircularProgressView.m; sourceTree = "<group>"; };
 		92FF925421E6DD1E001EBFF6 /* DALabeledCircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DALabeledCircularProgressView.h; sourceTree = "<group>"; };
@@ -707,6 +710,8 @@
 			children = (
 				9172C64121E6284500303BE3 /* LogListModel.h */,
 				9172C64221E6284500303BE3 /* LogListModel.m */,
+				92BFE7FC21F17DA200C38AEF /* DiaryTypeModel.h */,
+				92BFE7FD21F17DA200C38AEF /* DiaryTypeModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1305,6 +1310,7 @@
 				92FF92EA21E6F2ED001EBFF6 /* BKCustomPickerView.m in Sources */,
 				92FF92EB21E6F2ED001EBFF6 /* CustomAlertController.m in Sources */,
 				9172C5F921E6276400303BE3 /* MJRefreshBackNormalFooter.m in Sources */,
+				92BFE7FE21F17DA200C38AEF /* DiaryTypeModel.m in Sources */,
 				92A31F4021E5E15A002659E5 /* BKNetworking.m in Sources */,
 				92FF92B721E6DD1E001EBFF6 /* ZLPhotoPickerCollectionViewCell.m in Sources */,
 				92FF92AB21E6DD1E001EBFF6 /* ZLPhotoPickerBrowserPhotoScrollView.m in Sources */,

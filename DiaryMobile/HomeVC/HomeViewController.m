@@ -83,7 +83,7 @@
 
 - (void)homeLoadNewData {
     [self.view showHUDActivityView:@"正在加載..." shade:NO];
-    [BlogTypeList getBlogTypeListBlock:^(NSArray *data, NSString *netErr) {
+    [DiaryTypeModel getBlogTypeListBlock:^(NSArray *data, NSString *netErr) {
         [self.view removeHUDActivity];
         if (netErr) {
             [self.view showHUDTitleView:netErr image:nil];
@@ -107,7 +107,7 @@
     _vTableViews = [NSMutableArray arrayWithCapacity:data.count];
     //初始化页面分类view
     [data enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        BlogTypeList *list = (BlogTypeList*)obj;
+        DiaryTypeModel *list = (DiaryTypeModel*)obj;
         [titles addObject:list.catname];
         
         //创建分类view

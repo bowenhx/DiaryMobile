@@ -16,7 +16,7 @@
  @param setName set字符串
  @param index 标记选中
  */
-typedef void (^SelectBlogTypeBlock)(BlogTypeList *obj,NSString *setName,NSUInteger index);
+typedef void (^SelectBlogTypeBlock)(DiaryTypeModel *obj,NSString *setName,NSUInteger index);
 
 /**  这里是当上面的index 为2和4的时候才会调用
  返回设置中的好友和密码

@@ -52,7 +52,7 @@
 - (void)tapRightBtn {
     NSLog(@"_selectIndex = %ld",_selectIndex);
    if (_blogSetting == EditBlogSetting_Type){
-       BlogTypeList *typeModel = _itemArray[_selectIndex];
+       DiaryTypeModel *typeModel = _itemArray[_selectIndex];
        if (_typeObj) {
            _typeObj ( typeModel , typeModel.catname , _selectIndex);
        }
@@ -148,7 +148,7 @@
 - (void)cellForRowSurplusTableViewCell:(BlogSettingTableViewCell *)cell indexPath:(NSIndexPath *)indexPath{
     if (_blogSetting == EditBlogSetting_Type) {
         cell.leftImg.hidden = YES;
-        BlogTypeList *typeModel = _itemArray[indexPath.row];
+        DiaryTypeModel *typeModel = _itemArray[indexPath.row];
         cell.textLab.text = typeModel.catname;
         if (indexPath.row == _selectIndex) {
             cell.rightImg.hidden = NO;
