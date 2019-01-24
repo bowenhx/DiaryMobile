@@ -8,7 +8,7 @@
 
 #import "LoginViewController.h"
 #import "BaseNavigationViewController.h"
-
+#import "RegisterViewController.h"
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet UITextField *password;
@@ -43,6 +43,16 @@
     return YES;
 }
 
+- (IBAction)didSelectRegisterAction:(UIButton *)sender {
+    RegisterViewController *registerVC = [[RegisterViewController alloc] initWithNibName:@"RegisterViewController" bundle:nil];
+    [self.navigationController pushViewController:registerVC animated:YES];
+    
+    @WeakObj(self);
+    registerVC.pushHomePageVC = ^(NSDictionary *info){
+        selfWeak.userName.text = info[@"username"];
+        selfWeak.password.text = info[@"password"];
+    };
+}
 
 
 - (void)viewDidLoad {

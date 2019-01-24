@@ -14,6 +14,7 @@
 @interface MyViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, copy) NSArray *dataSource;
+@property (nonatomic, copy) NSArray *links;
 @property (nonatomic, strong) UIImageView *userIcon;
 @property (nonatomic, strong) UILabel *userName;
 @property (nonatomic, strong) UIButton *outButton;
@@ -44,7 +45,8 @@
 }
 
 - (void)loadNewData {
-    _dataSource = @[@"我的日記", @"關於我們"];
+    _dataSource = @[@[@"我的日記"], @[@"關於我們", @"私隱政策", @"使用條款", @"免責聲明"]];
+    _links = @[kDiaryAbout, kPrivacyPolicy, kUserPrivacy, kExemption];
 }
 
 - (void)mLoginViewStatus {
@@ -105,32 +107,37 @@
 
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return _dataSource.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _dataSource.count;
+    return [_dataSource[section] count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.text = _dataSource[indexPath.row];
+    cell.textLabel.text = _dataSource[indexPath.section][indexPath.row];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (indexPath.row == 0) {
+    if (indexPath.section == 0 && indexPath.row == 0) {
         [self showNextControllerName:@"FriendsTableViewController" params:@{@"title":@"我的日記"} isPush:YES];
     } else {
-        [WebViewController pushOpenWebViewControllerWithURL:kDiaryAbout title:@"關於我們" withFromViewCotroller:self];
+        [WebViewController pushOpenWebViewControllerWithURL:_links[indexPath.row] title:_dataSource[indexPath.section][indexPath.row] withFromViewCotroller:self];
     }
     
 }
 
-
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (section == 1) {
+        return @"其他";
+    }
+    return nil;
+}
 #pragma mark - 退出登录
 - (void)mLoginOutAction {
     [self.view showHUDActivityView:nil shade:NO];

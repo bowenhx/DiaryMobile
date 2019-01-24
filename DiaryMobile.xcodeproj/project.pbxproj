@@ -77,6 +77,13 @@
 		91CC72C321E9EB9C00EC8393 /* FriendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 91CC72C221E9EB9C00EC8393 /* FriendModel.m */; };
 		91CC72C721E9F02F00EC8393 /* UserHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 91CC72C621E9F02F00EC8393 /* UserHelper.m */; };
 		9204768421EC71D200B23655 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9204768321EC71D200B23655 /* LoginViewController.xib */; };
+		9224E95D21F99E670085D194 /* TreatyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9224E95721F99E660085D194 /* TreatyViewController.xib */; };
+		9224E95E21F99E670085D194 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9224E95821F99E660085D194 /* RegisterViewController.xib */; };
+		9224E95F21F99E670085D194 /* TreatyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9224E95921F99E660085D194 /* TreatyViewController.m */; };
+		9224E96021F99E670085D194 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9224E95C21F99E670085D194 /* RegisterViewController.m */; };
+		9224E96521F99E870085D194 /* RegisterViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9224E96321F99E870085D194 /* RegisterViewCell.xib */; };
+		9224E96621F99E870085D194 /* RegisterTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9224E96421F99E870085D194 /* RegisterTextField.m */; };
+		9224E96821F9A0220085D194 /* KingTextHK.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9224E96721F9A0220085D194 /* KingTextHK.txt */; };
 		929A187E21E88B82007FE304 /* EditDiaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A187B21E88B82007FE304 /* EditDiaryViewController.m */; };
 		929A187F21E88B82007FE304 /* EditDiaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 929A187C21E88B82007FE304 /* EditDiaryViewController.xib */; };
 		929A188321E88B8A007FE304 /* BlogTypeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 929A188121E88B89007FE304 /* BlogTypeTableViewController.xib */; };
@@ -298,6 +305,16 @@
 		91CC72C521E9F02F00EC8393 /* UserHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserHelper.h; sourceTree = "<group>"; };
 		91CC72C621E9F02F00EC8393 /* UserHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserHelper.m; sourceTree = "<group>"; };
 		9204768321EC71D200B23655 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		9224E95721F99E660085D194 /* TreatyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TreatyViewController.xib; sourceTree = "<group>"; };
+		9224E95821F99E660085D194 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		9224E95921F99E660085D194 /* TreatyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreatyViewController.m; sourceTree = "<group>"; };
+		9224E95A21F99E660085D194 /* TreatyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreatyViewController.h; sourceTree = "<group>"; };
+		9224E95B21F99E670085D194 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		9224E95C21F99E670085D194 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		9224E96221F99E870085D194 /* RegisterTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterTextField.h; sourceTree = "<group>"; };
+		9224E96321F99E870085D194 /* RegisterViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewCell.xib; sourceTree = "<group>"; };
+		9224E96421F99E870085D194 /* RegisterTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterTextField.m; sourceTree = "<group>"; };
+		9224E96721F9A0220085D194 /* KingTextHK.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = KingTextHK.txt; sourceTree = "<group>"; };
 		929A187B21E88B82007FE304 /* EditDiaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditDiaryViewController.m; sourceTree = "<group>"; };
 		929A187C21E88B82007FE304 /* EditDiaryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditDiaryViewController.xib; sourceTree = "<group>"; };
 		929A187D21E88B82007FE304 /* EditDiaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditDiaryViewController.h; sourceTree = "<group>"; };
@@ -785,6 +802,16 @@
 			path = UserHelper;
 			sourceTree = "<group>";
 		};
+		9224E96121F99E870085D194 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9224E96221F99E870085D194 /* RegisterTextField.h */,
+				9224E96421F99E870085D194 /* RegisterTextField.m */,
+				9224E96321F99E870085D194 /* RegisterViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		929A187A21E88B77007FE304 /* SendDIaryVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -851,6 +878,13 @@
 				92A31F0C21E5CA52002659E5 /* LoginViewController.h */,
 				92A31F0D21E5CA52002659E5 /* LoginViewController.m */,
 				9204768321EC71D200B23655 /* LoginViewController.xib */,
+				9224E95B21F99E670085D194 /* RegisterViewController.h */,
+				9224E95C21F99E670085D194 /* RegisterViewController.m */,
+				9224E95821F99E660085D194 /* RegisterViewController.xib */,
+				9224E95A21F99E660085D194 /* TreatyViewController.h */,
+				9224E95921F99E660085D194 /* TreatyViewController.m */,
+				9224E95721F99E660085D194 /* TreatyViewController.xib */,
+				9224E96121F99E870085D194 /* Views */,
 				929A187A21E88B77007FE304 /* SendDIaryVC */,
 				92FF92ED21E74152001EBFF6 /* FriendVC */,
 				9172C63F21E6282A00303BE3 /* HomeVC */,
@@ -858,6 +892,7 @@
 				9172C64D21E62F0A00303BE3 /* MyCenterVC */,
 				92A31F0F21E5CA52002659E5 /* Main.storyboard */,
 				92A31F1221E5CA54002659E5 /* Assets.xcassets */,
+				9224E96721F9A0220085D194 /* KingTextHK.txt */,
 				92A31F1421E5CA54002659E5 /* LaunchScreen.storyboard */,
 				92A31F1721E5CA54002659E5 /* Info.plist */,
 				92A31F1821E5CA54002659E5 /* main.m */,
@@ -1237,11 +1272,15 @@
 				929A187F21E88B82007FE304 /* EditDiaryViewController.xib in Resources */,
 				92A31F1321E5CA54002659E5 /* Assets.xcassets in Resources */,
 				92FF92E421E6EFF4001EBFF6 /* WebViewController.xib in Resources */,
+				9224E96521F99E870085D194 /* RegisterViewCell.xib in Resources */,
 				929A188321E88B8A007FE304 /* BlogTypeTableViewController.xib in Resources */,
 				9172C60B21E6276D00303BE3 /* MBProgressHUD.bundle in Resources */,
+				9224E95D21F99E670085D194 /* TreatyViewController.xib in Resources */,
+				9224E96821F9A0220085D194 /* KingTextHK.txt in Resources */,
 				91CC72BF21E9EA8A00EC8393 /* FriendListViewCell.xib in Resources */,
 				9172C5FE21E6276400303BE3 /* MJRefresh.bundle in Resources */,
 				9204768421EC71D200B23655 /* LoginViewController.xib in Resources */,
+				9224E95E21F99E670085D194 /* RegisterViewController.xib in Resources */,
 				929A189021E89843007FE304 /* BlogSettingTableViewCell.xib in Resources */,
 				92A31F1121E5CA52002659E5 /* Main.storyboard in Resources */,
 				92FF92DD21E6ED2F001EBFF6 /* DiaryListViewCell.xib in Resources */,
@@ -1290,6 +1329,7 @@
 				9172C63021E6277600303BE3 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				92FF92AA21E6DD1E001EBFF6 /* ZLPhotoPickerCustomToolBarView.m in Sources */,
 				92FF92AE21E6DD1E001EBFF6 /* ZLPhotoPickerDatas.m in Sources */,
+				9224E96021F99E670085D194 /* RegisterViewController.m in Sources */,
 				9172C58421E6275000303BE3 /* NSObject+YYModel.m in Sources */,
 				9172C5B421E6275700303BE3 /* SDWebImageDecoder.m in Sources */,
 				929A189121E89843007FE304 /* BlogSettingTableViewCell.m in Sources */,
@@ -1313,6 +1353,7 @@
 				92BFE7FE21F17DA200C38AEF /* DiaryTypeModel.m in Sources */,
 				92A31F4021E5E15A002659E5 /* BKNetworking.m in Sources */,
 				92FF92B721E6DD1E001EBFF6 /* ZLPhotoPickerCollectionViewCell.m in Sources */,
+				9224E96621F99E870085D194 /* RegisterTextField.m in Sources */,
 				92FF92AB21E6DD1E001EBFF6 /* ZLPhotoPickerBrowserPhotoScrollView.m in Sources */,
 				9172C62C21E6277600303BE3 /* MASLayoutConstraint.m in Sources */,
 				92A31F3221E5DA10002659E5 /* MyViewController.m in Sources */,
@@ -1373,6 +1414,7 @@
 				9172C62F21E6277600303BE3 /* NSArray+MASAdditions.m in Sources */,
 				929A188421E88B8A007FE304 /* BlogTypeTableViewController.m in Sources */,
 				9172C58521E6275000303BE3 /* YYClassInfo.m in Sources */,
+				9224E95F21F99E670085D194 /* TreatyViewController.m in Sources */,
 				92FF92B921E6DD1E001EBFF6 /* ZLPhotoPickerImageView.m in Sources */,
 				9172C64321E6284500303BE3 /* LogListModel.m in Sources */,
 				9172C5B921E6275800303BE3 /* UIButton+WebCache.m in Sources */,

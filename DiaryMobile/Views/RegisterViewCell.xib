@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="registerCell" rowHeight="45" id="AjF-6t-Obt">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AjF-6t-Obt" id="FK4-tA-OMN">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField opaque="NO" clipsSubviews="YES" tag="120" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="hQU-rB-Y1q" customClass="RegisterTextField">
+                        <rect key="frame" x="58" y="7" width="262" height="30.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="zPl-te-RsD">
+                        <rect key="frame" x="16" y="14" width="36" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="zPl-te-RsD" firstAttribute="top" secondItem="FK4-tA-OMN" secondAttribute="topMargin" constant="3" id="2YY-jI-C9l"/>
+                    <constraint firstAttribute="bottom" secondItem="hQU-rB-Y1q" secondAttribute="bottom" constant="7" id="AzE-ee-UYD"/>
+                    <constraint firstItem="hQU-rB-Y1q" firstAttribute="leading" secondItem="zPl-te-RsD" secondAttribute="trailing" constant="6" id="S8v-qU-04L"/>
+                    <constraint firstItem="hQU-rB-Y1q" firstAttribute="top" secondItem="FK4-tA-OMN" secondAttribute="top" constant="7" id="Zrn-y1-Q91"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="zPl-te-RsD" secondAttribute="bottom" constant="4" id="kqm-qT-gnx"/>
+                    <constraint firstAttribute="trailing" secondItem="hQU-rB-Y1q" secondAttribute="trailing" id="n7a-nE-rCn"/>
+                    <constraint firstItem="zPl-te-RsD" firstAttribute="leading" secondItem="FK4-tA-OMN" secondAttribute="leadingMargin" id="pBQ-do-kdt"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="5" y="116"/>
+        </tableViewCell>
+    </objects>
+</document>

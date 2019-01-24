@@ -63,14 +63,27 @@
                                 <action selector="goWithLoginAction:" destination="-1" eventType="touchUpInside" id="N4U-sy-AIK"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RaI-IT-t56">
+                            <rect key="frame" x="40" y="434" width="295" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="z4D-5W-bqo"/>
+                            </constraints>
+                            <state key="normal" title="註冊" backgroundImage="header_bg"/>
+                            <connections>
+                                <action selector="didSelectRegisterAction:" destination="-1" eventType="touchUpInside" id="3Y1-pV-y18"/>
+                                <action selector="goWithLoginAction:" destination="-1" eventType="touchUpInside" id="DiH-xB-mve"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="h3H-uK-fQ4" secondAttribute="trailing" constant="40" id="0uQ-2H-X2E"/>
+                        <constraint firstItem="RaI-IT-t56" firstAttribute="width" secondItem="h3H-uK-fQ4" secondAttribute="width" id="8Lt-V8-sLf"/>
                         <constraint firstItem="aiK-9f-7Ht" firstAttribute="top" secondItem="eDK-9N-gRp" secondAttribute="bottom" constant="30" id="8fN-Or-Ng9"/>
                         <constraint firstItem="Sze-vL-K8E" firstAttribute="leading" secondItem="eDK-9N-gRp" secondAttribute="trailing" constant="10" id="98V-nB-Wqi"/>
                         <constraint firstItem="eDK-9N-gRp" firstAttribute="leading" secondItem="Mo5-dx-4zN" secondAttribute="leading" constant="40" id="9gv-6q-WdX"/>
                         <constraint firstItem="h3H-uK-fQ4" firstAttribute="top" secondItem="mfK-bI-TXr" secondAttribute="bottom" constant="85" id="KxW-Yk-0jR"/>
+                        <constraint firstItem="RaI-IT-t56" firstAttribute="top" secondItem="h3H-uK-fQ4" secondAttribute="bottom" constant="55" id="LvO-c4-hXC"/>
                         <constraint firstItem="h3H-uK-fQ4" firstAttribute="leading" secondItem="Mo5-dx-4zN" secondAttribute="leading" constant="40" id="PT3-O3-epE"/>
                         <constraint firstItem="mfK-bI-TXr" firstAttribute="leading" secondItem="aiK-9f-7Ht" secondAttribute="trailing" constant="10" id="QTl-cr-sn5"/>
                         <constraint firstItem="Sze-vL-K8E" firstAttribute="leading" secondItem="eDK-9N-gRp" secondAttribute="trailing" constant="10" id="VxJ-mo-FLz"/>
@@ -80,6 +93,7 @@
                         <constraint firstItem="eDK-9N-gRp" firstAttribute="top" secondItem="Mo5-dx-4zN" secondAttribute="top" constant="172" id="uA5-0k-PRN"/>
                         <constraint firstItem="aiK-9f-7Ht" firstAttribute="leading" secondItem="Mo5-dx-4zN" secondAttribute="leading" constant="40" id="vkz-ri-Wn7"/>
                         <constraint firstAttribute="trailing" secondItem="Sze-vL-K8E" secondAttribute="trailing" constant="40" id="wuo-WS-oPB"/>
+                        <constraint firstItem="RaI-IT-t56" firstAttribute="leading" secondItem="h3H-uK-fQ4" secondAttribute="leading" id="x27-l4-cB8"/>
                     </constraints>
                 </view>
             </subviews>

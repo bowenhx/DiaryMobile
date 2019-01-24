@@ -49,11 +49,23 @@ static NSString *const kPhotoGallery = @"?mod=home&op=album";
 //用户登录api
 static NSString *const kLoginLogin = @"?mod=member&op=login";
 
+//注册
+static NSString *const kRegister = @"?mod=member&op=register";
+
 //用户推出登录api
 static NSString *const kLoginLoginOut = @"?mod=member&op=logout";
 
 
 static NSString *const kDiaryAbout = @"https://iphone2.baby-kingdom.com/about.php";
+
+//隐私条例
+static NSString *const kPrivacyPolicy = @"https://www.mobile-kingdom.com/privacy.php";
+
+//使用条条款
+static NSString *const kUserPrivacy = @"https://www.mobile-kingdom.com/tof.php";
+
+//免責聲明
+static NSString *const kExemption = @"https://www.mobile-kingdom.com/disclaimer.php";
 
 
 //保存日志分类对象key
